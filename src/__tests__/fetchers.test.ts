@@ -27,7 +27,8 @@ describe("Fetchers", () => {
   describe("File", () => {
     const fetcher = fetchers.file({
       path: "./proxy.txt",
-      autoCheck: false
+      autoCheck: false,
+      defaultProxyType: "http"
     });
 
     test("should fetch proxies", async () => {
@@ -39,7 +40,8 @@ describe("Fetchers", () => {
             host: "localhost",
             port: 300,
             username: "pupa",
-            password: "lupa"
+            password: "lupa",
+            type: "http"
           } as any,
 
           {

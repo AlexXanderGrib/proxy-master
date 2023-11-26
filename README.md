@@ -32,7 +32,7 @@
 ## ⚙️ Usage
 
 ```javascript
-import { fetchers, getAgent, isSocks } from "proxy-master";
+import { fetchers, getAgent, isSocks, getDispatcher } from "proxy-master";
 
 const fetcher = fetchers.file({ path: "./proxy.txt" });
 
@@ -46,6 +46,11 @@ const proxy = fetcher.random();
 
 // create custom agent
 const agent = getAgent(proxy);
+
+{
+  // fetch with native (node.js fetch/undici)
+  await fetch("https://example.com", { dispatcher: getDispatcher(proxy) })
+}
 
 {
   // fetch directly (node-fetch)

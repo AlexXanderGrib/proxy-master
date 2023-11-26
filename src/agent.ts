@@ -1,27 +1,31 @@
-import { Agent } from "https";
-import { ProxyInfo, stringifyToUrl } from "./parser";
+import { TypedProxyInfo, stringifyToUrl } from "./parser";
+import { ProxyTypeRequiredError } from "./errors";
+
+import type { Agent } from "https";
 import { HttpsProxyAgent } from "https-proxy-agent";
 import { HttpProxyAgent } from "http-proxy-agent";
 import { SocksProxyAgent } from "socks-proxy-agent";
+import { ProxyAgent } from "proxy-agent";
 
 /**
  *
  *
  * @export
- * @param {ProxyInfo} proxy
+ * @param {TypedProxyInfo} proxy
  * @return {*}  {{
  *   httpsAgent: Agent;
  *   httpAgent: Agent;
  * }}
  */
-export function getAgents(proxy: ProxyInfo): {
+export function getAgents(proxy: TypedProxyInfo): {
   httpsAgent: Agent;
   httpAgent: Agent;
 } {
   const url = stringifyToUrl(proxy);
 
   switch (proxy.type) {
-    case "http": {
+    case "http":
+    case "https": {
       return {
         httpAgent: new HttpProxyAgent(url),
         httpsAgent: new HttpsProxyAgent(url)
@@ -35,16 +39,16 @@ export function getAgents(proxy: ProxyInfo): {
     }
 
     default: {
-      throw new Error("Proxy info should have type defined");
+      throw new ProxyTypeRequiredError(proxy);
     }
   }
 }
 
 /**
  *
- * @param {ProxyInfo} proxy
+ * @param {TypedProxyInfo} proxy
  * @return {Agent}
  */
-export function getAgent(proxy: ProxyInfo): Agent {
-  return getAgents(proxy).httpsAgent;
+export function getAgent(proxy: TypedProxyInfo): Agent {
+  return new ProxyAgent(getAgents(proxy));
 }

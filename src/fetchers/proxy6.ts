@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ProxyFetcher } from "../fetcher";
-import { ProxyInfo } from "../parser";
+import { TypedProxyInfo } from "../parser";
 import queryString from "query-string";
 
 export type Proxy6Info = {
@@ -78,10 +78,10 @@ export class Proxy6Fetcher extends ProxyFetcher<Proxy6Info> {
    *
    *
    * @protected
-   * @return {Promise<Map<ProxyInfo, Proxy6Info>>}  {Promise<Map<ProxyInfo, Proxy6Info>>}
+   * @return {Promise<Map<TypedProxyInfo, Proxy6Info>>}  {Promise<Map<TypedProxyInfo, Proxy6Info>>}
    * @memberof Proxy6Fetcher
    */
-  protected async _fetch(): Promise<Map<ProxyInfo, Proxy6Info>> {
+  protected async _fetch(): Promise<Map<TypedProxyInfo, Proxy6Info>> {
     const { data } = await this._axios.get<Proxy6Response>("getproxy", {
       params: {
         state: this.options.state ?? "active",
@@ -101,7 +101,7 @@ export class Proxy6Fetcher extends ProxyFetcher<Proxy6Info> {
             port: Number.parseInt(proxy.port),
             username: proxy.user,
             password: proxy.pass
-          } as ProxyInfo,
+          } as TypedProxyInfo,
           {
             id: proxy.id,
             ip: proxy.ip,

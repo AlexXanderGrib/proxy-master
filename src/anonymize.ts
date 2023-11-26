@@ -1,16 +1,16 @@
 import chains from "proxy-chain";
-import { HttpProxy, isHttp, parse, stringifyToUrl } from "./parser";
+import { HttpLikeProxy, isHttp, parse, stringifyToUrl } from "./parser";
 
 /**
  *
- * @param {HttpProxy} proxy
+ * @param {HttpLikeProxy} proxy
  * @param {*} [options]
- * @return {Promise<HttpProxy>}
+ * @return {Promise<HttpLikeProxy>}
  */
 export async function anonymizeProxy(
-  proxy: HttpProxy,
+  proxy: HttpLikeProxy,
   { localPort = 0 } = {}
-): Promise<HttpProxy> {
+): Promise<HttpLikeProxy> {
   const url = await chains.anonymizeProxy({
     port: localPort,
     url: stringifyToUrl(proxy)
@@ -29,12 +29,12 @@ export async function anonymizeProxy(
  *
  *
  * @export
- * @param {HttpProxy} proxy
+ * @param {HttpLikeProxy} proxy
  * @param {*} [options]
  * @return {Promise<void>}  {Promise<void>}
  */
 export async function closeAnonymizedProxy(
-  proxy: HttpProxy,
+  proxy: HttpLikeProxy,
   { closeConnections = true } = {}
 ): Promise<void> {
   const result = await chains.closeAnonymizedProxy(

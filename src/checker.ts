@@ -1,5 +1,5 @@
-import { Mutable, ProxyInfo, ProxyType } from "./parser";
-import { getAgents } from "./agent";
+import { Mutable, ProxyInfo, ProxyType, isTyped } from "./parser";
+import { getAgent } from "./agent";
 
 import axios from "axios";
 
@@ -25,7 +25,7 @@ export async function check(
     allowParallel = true
   } = {}
 ): Promise<CheckedProxy> {
-  if (proxy.type) {
+  if (isTyped(proxy)) {
     const start = Date.now();
 
     let timeoutObject: ReturnType<typeof setTimeout> | undefined;
@@ -41,19 +41,18 @@ export async function check(
       signal?.addEventListener("abort", () => cancel("Aborted"));
     });
 
-    const { httpAgent, httpsAgent } = getAgents(proxy);
+    const agent = getAgent(proxy);
 
     try {
       await axios.get(checkingUrl, {
         signal,
         timeout,
         cancelToken,
-        httpAgent,
-        httpsAgent
+        httpAgent: agent,
+        httpsAgent: agent
       });
     } finally {
-      httpAgent.destroy();
-      httpsAgent.destroy();
+      agent.destroy();
 
       if (timeoutObject) {
         clearTimeout(timeoutObject);

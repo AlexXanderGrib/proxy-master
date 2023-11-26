@@ -1,9 +1,10 @@
 import { readFile } from "fs/promises";
 import { ProxyFetcher } from "../fetcher";
-import { ProxyInfo, ProxyParsingError, parse } from "../parser";
+import { ProxyType, TypedProxyInfo, parseRequireType } from "../parser";
 import { check } from "../checker";
 import type { PathLike } from "fs";
 import EventEmitter from "eventemitter3";
+import { ProxyParsingError } from "../errors";
 
 export type FileFetcherOptions = {
   path: PathLike;
@@ -11,6 +12,7 @@ export type FileFetcherOptions = {
 
   checkUrl?: string;
   checkTimeout?: number;
+  defaultProxyType?: ProxyType;
 };
 
 export type FileInfo = {
@@ -19,7 +21,7 @@ export type FileInfo = {
 };
 
 export type FileFetcherEvents = {
-  "checked:valid": (proxy: ProxyInfo, file: FileInfo) => void;
+  "checked:valid": (proxy: TypedProxyInfo, file: FileInfo) => void;
   "checked:failed": (line: string, error: unknown) => void;
 };
 
@@ -54,18 +56,18 @@ export class FileFetcher extends ProxyFetcher<FileInfo> {
   }
 
   private readonly _invalid = new Set<string>();
-  private readonly _valid = new Map<string, ProxyInfo>();
+  private readonly _valid = new Map<string, TypedProxyInfo>();
 
   /**
    *
    *
    * @protected
-   * @return {Promise<Map<ProxyInfo, FileInfo>>}  {Promise<Map<ProxyInfo, FileInfo>>}
+   * @return {Promise<Map<TypedProxyInfo, FileInfo>>}  {Promise<Map<TypedProxyInfo, FileInfo>>}
    * @memberof FileFetcher
    */
-  protected async _fetch(): Promise<Map<ProxyInfo, FileInfo>> {
+  protected async _fetch(): Promise<Map<TypedProxyInfo, FileInfo>> {
     const content = await readFile(this.options.path, "ascii").catch(() => "");
-    const map = new Map<ProxyInfo, FileInfo>();
+    const map = new Map<TypedProxyInfo, FileInfo>();
 
     let lineIndex = 0;
 
@@ -78,7 +80,7 @@ export class FileFetcher extends ProxyFetcher<FileInfo> {
 
       try {
         lineIndex++;
-        let proxy = parse(line);
+        let proxy = parseRequireType(line, this.options.defaultProxyType);
         const info: FileInfo = { line, lineIndex };
 
         const cachedValid = this._valid.get(line);

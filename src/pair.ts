@@ -1,7 +1,7 @@
 import { Agent } from "https";
 import { anonymizeProxy, closeAnonymizedProxy } from "./anonymize";
 import {
-  HttpProxy,
+  HttpLikeProxy,
   ProxyType,
   SocksProxy,
   TypedProxyInfo,
@@ -20,12 +20,12 @@ import { Socket } from "net";
 export class ProxyPair implements TypedProxyInfo {
   /**
    * Creates an instance of ProxyPair.
-   * @param {HttpProxy} http
+   * @param {HttpLikeProxy} http
    * @param {SocksProxy} socks
    * @memberof ProxyPair
    */
   constructor(
-    public readonly http: HttpProxy,
+    public readonly http: HttpLikeProxy,
     public readonly socks: SocksProxy,
     public readonly primaryType: "socks" | "http" = "http"
   ) {}
@@ -93,7 +93,7 @@ export class ProxyPair implements TypedProxyInfo {
     return this[this.primaryType];
   }
 
-  private _browserProxy: HttpProxy | undefined;
+  private _browserProxy: HttpLikeProxy | undefined;
   private _browserUrl: string | undefined;
 
   private _socksAgent: Agent | undefined;

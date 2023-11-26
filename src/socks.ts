@@ -1,4 +1,4 @@
-import { SocksClient } from "socks";
+import { SocksClient, SocksClientOptions } from "socks";
 import { SocksProxy } from "./parser";
 import { Socket } from "net";
 
@@ -9,12 +9,14 @@ import { Socket } from "net";
  * @param {SocksProxy} proxy
  * @param {string} host
  * @param {number} port
+ * @param {Partial<SocksClientOptions>} [options={}]
  * @return {Promise<Socket>}  {Promise<Socket>}
  */
 export async function createSocksSocket(
   proxy: SocksProxy,
   host: string,
-  port: number
+  port: number,
+  options: Partial<SocksClientOptions> = {}
 ): Promise<Socket> {
   const { socket } = await SocksClient.createConnection({
     command: "connect",
@@ -25,7 +27,8 @@ export async function createSocksSocket(
       host: proxy.host,
       userId: proxy.username,
       password: proxy.password
-    }
+    },
+    ...options
   });
 
   return socket;

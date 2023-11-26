@@ -1,15 +1,7 @@
-import "dotenv/config";
 import { check } from "../checker";
-import { ProxyInfo, parse } from "../parser";
+import { validHttp, validSocks, validUnknownSocks, invalid } from "./proxies";
 
 describe("Proxy checker", () => {
-  const validHttp = parse(process.env.VALID_HTTP_PROXY!);
-  const validSocks = parse(process.env.VALID_SOCKS_PROXY!);
-  const validUnknownSocks = parse(process.env.VALID_SOCKS_PROXY!);
-  delete validUnknownSocks.type;
-
-  const invalid: ProxyInfo = { host: "undefined", port: 3 };
-
   test("Valid HTTP", async () => {
     const result = await check(validHttp);
     expect(result).toHaveProperty("timeout");

@@ -1,6 +1,7 @@
 import { isIP } from "net";
+import { ProxyParsingError, ProxyTypeRequiredError } from "./errors";
 
-export type ProxyType = "http" | "socks4" | "socks5";
+export type ProxyType = "http" | "https" | "socks4" | "socks5";
 
 export type ProxyInfo = {
   readonly type?: ProxyType;
@@ -15,6 +16,8 @@ export type TypedProxyInfo<T extends ProxyType = ProxyType> = ProxyInfo & {
 };
 
 export type HttpProxy = TypedProxyInfo<"http">;
+export type HttpsProxy = TypedProxyInfo<"https">;
+export type HttpLikeProxy = HttpProxy | HttpsProxy;
 export type Socks5Proxy = TypedProxyInfo<"socks5">;
 export type Socks4Proxy = TypedProxyInfo<"socks4">;
 export type SocksProxy = Socks4Proxy | Socks5Proxy;
@@ -35,28 +38,8 @@ const protocolToType: Record<string, ProxyType> = {
   "socks4:": "socks4",
   "socks5:": "socks5",
   "http:": "http",
-  "https:": "http"
+  "https:": "https"
 };
-
-/**
- *
- *
- * @export
- * @class ProxyParsingError
- * @extends {Error}
- */
-export class ProxyParsingError extends Error {
-  override name = "ProxyParsingError";
-
-  /**
-   * Creates an instance of ProxyParsingError.
-   * @param {string} line
-   * @memberof ProxyParsingError
-   */
-  constructor(line: string) {
-    super(`Invalid proxy format: ${line}`);
-  }
-}
 
 /**
  *
@@ -176,9 +159,67 @@ export function isSocks4(proxy: ProxyInfo): proxy is Socks4Proxy {
 
 /**
  *
+ *
+ * @export
+ * @param {ProxyInfo} proxy
+ * @return {boolean}  {proxy is HttpsProxy}
+ */
+export function isHttps(proxy: ProxyInfo): proxy is HttpsProxy {
+  return proxy.type === "https";
+}
+
+/**
+ *
+ *
+ * @export
+ * @param {ProxyInfo} proxy
+ * @return {boolean}  {proxy is HttpLikeProxy}
+ */
+export function isHttpLike(proxy: ProxyInfo): proxy is HttpLikeProxy {
+  return isHttp(proxy) || isHttps(proxy);
+}
+
+/**
+ *
  * @param {ProxyInfo} proxy
  * @return {boolean}
  */
 export function isSocks(proxy: ProxyInfo): proxy is SocksProxy {
   return isSocks5(proxy) || isSocks4(proxy);
+}
+
+/**
+ *
+ *
+ * @export
+ * @param {ProxyInfo} proxy
+ * @return {boolean}  {proxy is TypedProxyInfo}
+ */
+export function isTyped(proxy: ProxyInfo): proxy is TypedProxyInfo {
+  return !!proxy.type;
+}
+
+/**
+ *
+ *
+ * @export
+ * @param {(string | URL)} line
+ * @param {ProxyType} [defaultType]
+ * @return {Mutable<TypedProxyInfo>}  {Mutable<TypedProxyInfo>}
+ */
+export function parseRequireType(
+  line: string | URL,
+  defaultType?: ProxyType
+): Mutable<TypedProxyInfo> {
+  const proxy = parse(line);
+
+  if (isTyped(proxy)) {
+    return proxy;
+  }
+
+  if (defaultType) {
+    return { ...proxy, type: defaultType };
+  }
+
+  throw new ProxyTypeRequiredError(proxy);
 }
