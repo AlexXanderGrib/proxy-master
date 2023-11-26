@@ -3,7 +3,7 @@ import { ProxyParsingError, ProxyTypeRequiredError } from "./errors";
 
 export type ProxyType = "http" | "https" | "socks4" | "socks5";
 
-export type ProxyInfo = {
+export type AnyProxyInfo = {
   readonly type?: ProxyType;
   readonly host: string;
   readonly port: number;
@@ -11,15 +11,15 @@ export type ProxyInfo = {
   readonly password?: string;
 };
 
-export type TypedProxyInfo<T extends ProxyType = ProxyType> = ProxyInfo & {
+export type ProxyInfo<T extends ProxyType = ProxyType> = AnyProxyInfo & {
   readonly type: T;
 };
 
-export type HttpProxy = TypedProxyInfo<"http">;
-export type HttpsProxy = TypedProxyInfo<"https">;
+export type HttpProxy = ProxyInfo<"http">;
+export type HttpsProxy = ProxyInfo<"https">;
 export type HttpLikeProxy = HttpProxy | HttpsProxy;
-export type Socks5Proxy = TypedProxyInfo<"socks5">;
-export type Socks4Proxy = TypedProxyInfo<"socks4">;
+export type Socks5Proxy = ProxyInfo<"socks5">;
+export type Socks4Proxy = ProxyInfo<"socks4">;
 export type SocksProxy = Socks4Proxy | Socks5Proxy;
 export type Mutable<T extends {}> = { -readonly [P in keyof T]: T[P] };
 
@@ -46,9 +46,9 @@ const protocolToType: Record<string, ProxyType> = {
  * @param {string} line
  * @return {string}
  */
-export function parse(line: string | URL): Mutable<ProxyInfo> {
+export function parse(line: string | URL): Mutable<AnyProxyInfo> {
   if (line instanceof URL) {
-    const proxy: Mutable<ProxyInfo> = {
+    const proxy: Mutable<AnyProxyInfo> = {
       host: line.hostname,
       port: Number.parseInt(line.port)
     };
@@ -113,10 +113,10 @@ export function parse(line: string | URL): Mutable<ProxyInfo> {
 
 /**
  *
- * @param {ProxyInfo} proxy
+ * @param {AnyProxyInfo} proxy
  * @return {string} URL
  */
-export function stringifyToUrl(proxy: ProxyInfo): string {
+export function stringifyToUrl(proxy: AnyProxyInfo): string {
   const url = new URL(`${proxy.type ?? "proxy"}://${proxy.host}:${proxy.port}`);
 
   if (proxy.username) {
@@ -132,28 +132,28 @@ export function stringifyToUrl(proxy: ProxyInfo): string {
 
 /**
  *
- * @param {ProxyInfo} proxy
+ * @param {AnyProxyInfo} proxy
  * @return {boolean}
  */
-export function isHttp(proxy: ProxyInfo): proxy is HttpProxy {
+export function isHttp(proxy: AnyProxyInfo): proxy is HttpProxy {
   return proxy.type === "http";
 }
 
 /**
  *
- * @param {ProxyInfo} proxy
+ * @param {AnyProxyInfo} proxy
  * @return {boolean}
  */
-export function isSocks5(proxy: ProxyInfo): proxy is Socks5Proxy {
+export function isSocks5(proxy: AnyProxyInfo): proxy is Socks5Proxy {
   return proxy.type === "socks5";
 }
 
 /**
  *
- * @param {ProxyInfo} proxy
+ * @param {AnyProxyInfo} proxy
  * @return {boolean}
  */
-export function isSocks4(proxy: ProxyInfo): proxy is Socks4Proxy {
+export function isSocks4(proxy: AnyProxyInfo): proxy is Socks4Proxy {
   return proxy.type === "socks4";
 }
 
@@ -161,10 +161,10 @@ export function isSocks4(proxy: ProxyInfo): proxy is Socks4Proxy {
  *
  *
  * @export
- * @param {ProxyInfo} proxy
+ * @param {AnyProxyInfo} proxy
  * @return {boolean}  {proxy is HttpsProxy}
  */
-export function isHttps(proxy: ProxyInfo): proxy is HttpsProxy {
+export function isHttps(proxy: AnyProxyInfo): proxy is HttpsProxy {
   return proxy.type === "https";
 }
 
@@ -172,19 +172,19 @@ export function isHttps(proxy: ProxyInfo): proxy is HttpsProxy {
  *
  *
  * @export
- * @param {ProxyInfo} proxy
+ * @param {AnyProxyInfo} proxy
  * @return {boolean}  {proxy is HttpLikeProxy}
  */
-export function isHttpLike(proxy: ProxyInfo): proxy is HttpLikeProxy {
+export function isHttpLike(proxy: AnyProxyInfo): proxy is HttpLikeProxy {
   return isHttp(proxy) || isHttps(proxy);
 }
 
 /**
  *
- * @param {ProxyInfo} proxy
+ * @param {AnyProxyInfo} proxy
  * @return {boolean}
  */
-export function isSocks(proxy: ProxyInfo): proxy is SocksProxy {
+export function isSocks(proxy: AnyProxyInfo): proxy is SocksProxy {
   return isSocks5(proxy) || isSocks4(proxy);
 }
 
@@ -192,10 +192,10 @@ export function isSocks(proxy: ProxyInfo): proxy is SocksProxy {
  *
  *
  * @export
- * @param {ProxyInfo} proxy
- * @return {boolean}  {proxy is TypedProxyInfo}
+ * @param {AnyProxyInfo} proxy
+ * @return {boolean}  {proxy is ProxyInfo}
  */
-export function isTyped(proxy: ProxyInfo): proxy is TypedProxyInfo {
+export function isTyped(proxy: AnyProxyInfo): proxy is ProxyInfo {
   return !!proxy.type;
 }
 
@@ -205,12 +205,12 @@ export function isTyped(proxy: ProxyInfo): proxy is TypedProxyInfo {
  * @export
  * @param {(string | URL)} line
  * @param {ProxyType} [defaultType]
- * @return {Mutable<TypedProxyInfo>}  {Mutable<TypedProxyInfo>}
+ * @return {Mutable<ProxyInfo>}  {Mutable<ProxyInfo>}
  */
 export function parseRequireType(
   line: string | URL,
   defaultType?: ProxyType
-): Mutable<TypedProxyInfo> {
+): Mutable<ProxyInfo> {
   const proxy = parse(line);
 
   if (isTyped(proxy)) {

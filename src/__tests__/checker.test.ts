@@ -19,7 +19,7 @@ describe("Proxy checker", () => {
   });
 
   test("Valid unknown (sequential check)", async () => {
-    const result = await check(validUnknownSocks, { allowParallel: false });
+    const result = await check(validUnknownSocks, { parallel: false });
     expect(result).toHaveProperty("timeout");
     expect(result.type).toBe("socks5");
   });
@@ -36,7 +36,7 @@ describe("Proxy checker", () => {
 
   test("Invalid", async () => {
     try {
-      await check(invalid, { allowParallel: false, timeout: 200 });
+      await check(invalid, { parallel: false, timeout: 200 });
       fail("Expected to fail with error");
     } catch {
       // expected to fail
@@ -45,7 +45,7 @@ describe("Proxy checker", () => {
 
   test("Invalid (sequential check)", async () => {
     try {
-      await check(invalid, { allowParallel: false, timeout: 200 });
+      await check(invalid, { parallel: false, timeout: 200 });
       fail("Expected to fail with error");
     } catch {
       // expected to fail

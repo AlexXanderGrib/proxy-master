@@ -1,11 +1,12 @@
 export { getAgent, getAgents } from "./agent";
+export { getDispatcher } from "./undici";
 export { anonymizeProxy, closeAnonymizedProxy } from "./anonymize";
 export { check, CheckedProxy } from "./checker";
 export { ProxyFetcher } from "./fetcher";
 export { ProxyPair } from "./pair";
 export {
   HttpProxy,
-  ProxyInfo,
+  AnyProxyInfo,
   ProxyType,
   Socks4Proxy,
   Socks5Proxy,
@@ -16,8 +17,14 @@ export {
   isSocks5,
   parse,
   stringifyToUrl,
+  isHttpLike,
+  isHttps,
+  isTyped,
+  parseRequireType,
+  HttpLikeProxy,
+  HttpsProxy,
   Mutable,
-  TypedProxyInfo
+  ProxyInfo
 } from "./parser";
 export { createSocksSocket } from "./socks";
 export {
@@ -38,6 +45,10 @@ export {
   ProxyLineRenewParameters,
   ProxyLineResponse
 } from "./fetchers/proxyline";
-
-export { FileFetcher, FileInfo, FileFetcherOptions } from "./fetchers/file";
+export {
+  FileFetcher,
+  FileInfo,
+  FileFetcherOptions,
+  FileFetcherEvents
+} from "./fetchers/file";
 export { fetchers } from "./fetchers/index";

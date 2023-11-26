@@ -4,7 +4,7 @@ import {
   HttpLikeProxy,
   ProxyType,
   SocksProxy,
-  TypedProxyInfo,
+  ProxyInfo,
   stringifyToUrl
 } from "./parser";
 import { getAgent } from "./agent";
@@ -17,7 +17,7 @@ import { Socket } from "net";
  * @export
  * @class ProxyPair
  */
-export class ProxyPair implements TypedProxyInfo {
+export class ProxyPair implements ProxyInfo {
   /**
    * Creates an instance of ProxyPair.
    * @param {HttpLikeProxy} http
@@ -86,10 +86,10 @@ export class ProxyPair implements TypedProxyInfo {
    *
    *
    * @readonly
-   * @type {TypedProxyInfo}
+   * @type {ProxyInfo}
    * @memberof ProxyPair
    */
-  get primary(): TypedProxyInfo {
+  get primary(): ProxyInfo {
     return this[this.primaryType];
   }
 

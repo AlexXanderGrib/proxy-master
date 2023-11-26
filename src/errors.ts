@@ -1,4 +1,4 @@
-import { ProxyInfo } from "./parser";
+import { AnyProxyInfo } from "./parser";
 
 /**
  *
@@ -32,10 +32,10 @@ export class ProxyTypeRequiredError extends Error {
 
   /**
    * Creates an instance of ProxyTypeRequiredError.
-   * @param {ProxyInfo} info
+   * @param {AnyProxyInfo} info
    * @memberof ProxyTypeRequiredError
    */
-  constructor(info: ProxyInfo) {
+  constructor(info: AnyProxyInfo) {
     super(`Proxy info should contain proxy type: ${JSON.stringify(info)}`);
   }
 }

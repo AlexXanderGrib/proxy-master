@@ -1,4 +1,4 @@
-import { Mutable, ProxyInfo, TypedProxyInfo } from "./parser";
+import { Mutable, AnyProxyInfo, ProxyInfo } from "./parser";
 
 /**
  *
@@ -10,8 +10,10 @@ import { Mutable, ProxyInfo, TypedProxyInfo } from "./parser";
  */
 export abstract class ProxyFetcher<
   T,
-  K extends ProxyInfo = Mutable<TypedProxyInfo>
+  K extends AnyProxyInfo = Mutable<ProxyInfo>
 > {
+  protected $_infoType!: T;
+  protected $_proxyType!: K;
   private _proxies = new Map<K, T>();
   protected abstract _fetch(): Promise<Map<K, T>>;
 

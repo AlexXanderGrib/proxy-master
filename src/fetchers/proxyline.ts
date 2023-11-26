@@ -2,6 +2,8 @@ import axios from "axios";
 import { ProxyFetcher } from "../fetcher";
 import { ProxyPair } from "../pair";
 import queryString from "query-string";
+import { ProxyInfo } from "../parser";
+import { getAgent } from "../agent";
 
 export type ProxyLineFetcherOptions = {
   apiKey: string;
@@ -21,6 +23,8 @@ export type ProxyLineFetcherOptions = {
   orderId?: number[];
   limit?: number;
   offset?: number;
+
+  proxy?: ProxyInfo;
 };
 
 export type ProxyLineInfo = {
@@ -110,7 +114,8 @@ export class ProxyLineFetcher extends ProxyFetcher<ProxyLineInfo, ProxyPair> {
     baseURL: "https://panel.proxyline.net/api/",
     responseType: "json",
     paramsSerializer: (parameters) =>
-      queryString.stringify(parameters, { arrayFormat: "none" })
+      queryString.stringify(parameters, { arrayFormat: "none" }),
+    httpsAgent: this.options.proxy ? getAgent(this.options.proxy) : undefined
   });
 
   /**

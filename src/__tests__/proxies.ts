@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { ProxyInfo, parse, parseRequireType } from "../parser";
+import { AnyProxyInfo, parse, parseRequireType } from "../parser";
 
 export const validHttp = parseRequireType(
   process.env.VALID_HTTP_PROXY!,
@@ -14,4 +14,4 @@ const validUnknownSocks = parse(process.env.VALID_SOCKS_PROXY!);
 delete validUnknownSocks.type;
 export { validUnknownSocks };
 
-export const invalid: ProxyInfo = { host: "undefined", port: 3 };
+export const invalid: AnyProxyInfo = { host: "undefined", port: 3 };

@@ -1,7 +1,7 @@
-import { ProxyInfo, parse, stringifyToUrl } from "../parser";
+import { AnyProxyInfo, parse, stringifyToUrl } from "../parser";
 
 describe("Proxy parser", () => {
-  const toParse: Record<string, ProxyInfo> = {
+  const toParse: Record<string, AnyProxyInfo> = {
     "socks://pupa:lupa@[::]:300": {
       host: "[::]",
       port: 300,
@@ -53,7 +53,7 @@ describe("Proxy parser", () => {
     expect(() => parse("shit")).toThrow(/Invalid proxy format/);
   });
 
-  const toStringify: Record<string, ProxyInfo> = {
+  const toStringify: Record<string, AnyProxyInfo> = {
     "proxy://bank.ru:8080": {
       host: "bank.ru",
       port: 8080

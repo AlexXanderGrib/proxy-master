@@ -1,6 +1,6 @@
 /* eslint-disable unicorn/no-null */
 import { Agent, Dispatcher, ProxyAgent, buildConnector } from "undici";
-import { isHttpLike, isSocks, TypedProxyInfo } from "./parser";
+import { isHttpLike, isSocks, ProxyInfo } from "./parser";
 import { createSocksSocket } from "./socks";
 import { ProxyTypeRequiredError } from "./errors";
 
@@ -8,12 +8,12 @@ import { ProxyTypeRequiredError } from "./errors";
  *
  *
  * @export
- * @param {TypedProxyInfo} proxy
+ * @param {ProxyInfo} proxy
  * @param {buildConnector.BuildOptions} [connectorOptions={}]
  * @return {Dispatcher}  {Dispatcher}
  */
 export function getDispatcher(
-  proxy: TypedProxyInfo,
+  proxy: ProxyInfo,
   connectorOptions: buildConnector.BuildOptions = {}
 ): Dispatcher {
   if (isHttpLike(proxy)) {

@@ -1,29 +1,36 @@
-import { Mutable, ProxyInfo, ProxyType, isTyped } from "./parser";
+import { Mutable, AnyProxyInfo, ProxyInfo, ProxyType, isTyped } from "./parser";
 import { getAgent } from "./agent";
 
 import axios from "axios";
+import { ParallelMapOptions, getMultiTryResult, parallelMap } from "./parallel";
 
 export type CheckedProxy = Mutable<ProxyInfo> & {
   timeout: number;
-  type: ProxyType;
 };
 const proxyTypes: ProxyType[] = ["socks5", "http"];
 
+export type CheckerOptions = {
+  url?: string;
+  timeout?: number;
+  signal?: AbortSignal;
+  allowHeuristics?: boolean;
+} & ParallelMapOptions;
+
 /**
  *
- * @param {ProxyInfo} proxy
- * @param {*} options
+ * @param {AnyProxyInfo} proxy
+ * @param {CheckerOptions} options
  * @return {Promise<CheckedProxy>}
  */
 export async function check(
-  proxy: ProxyInfo,
+  proxy: AnyProxyInfo,
   {
     url: checkingUrl = "https://google.com",
     timeout = 3000,
     signal = undefined as AbortSignal | undefined,
     allowHeuristics = true,
-    allowParallel = true
-  } = {}
+    parallel = true
+  }: CheckerOptions = {}
 ): Promise<CheckedProxy> {
   if (isTyped(proxy)) {
     const start = Date.now();
@@ -61,7 +68,7 @@ export async function check(
 
     const diff = Date.now() - start;
 
-    return { ...proxy, timeout: diff, type: proxy.type };
+    return { ...proxy, timeout: diff };
   }
 
   if (!allowHeuristics) {
@@ -70,21 +77,11 @@ export async function check(
     );
   }
 
-  if (allowParallel) {
-    return await Promise.any(
-      proxyTypes.map(async (type) => await check({ ...proxy, type }))
-    );
-  }
+  const results = await parallelMap(
+    proxyTypes,
+    (type) => check({ ...proxy, type }),
+    { parallel }
+  );
 
-  let errorToThrow: unknown;
-
-  for (const type of proxyTypes) {
-    try {
-      return await check({ ...proxy, type });
-    } catch (error) {
-      errorToThrow = error;
-    }
-  }
-
-  throw errorToThrow;
+  return getMultiTryResult(results);
 }

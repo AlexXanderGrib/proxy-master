@@ -1,4 +1,4 @@
-import { TypedProxyInfo, stringifyToUrl } from "./parser";
+import { ProxyInfo, stringifyToUrl } from "./parser";
 import { ProxyTypeRequiredError } from "./errors";
 
 import type { Agent } from "https";
@@ -11,13 +11,13 @@ import { ProxyAgent } from "proxy-agent";
  *
  *
  * @export
- * @param {TypedProxyInfo} proxy
+ * @param {ProxyInfo} proxy
  * @return {*}  {{
  *   httpsAgent: Agent;
  *   httpAgent: Agent;
  * }}
  */
-export function getAgents(proxy: TypedProxyInfo): {
+export function getAgents(proxy: ProxyInfo): {
   httpsAgent: Agent;
   httpAgent: Agent;
 } {
@@ -46,9 +46,9 @@ export function getAgents(proxy: TypedProxyInfo): {
 
 /**
  *
- * @param {TypedProxyInfo} proxy
+ * @param {ProxyInfo} proxy
  * @return {Agent}
  */
-export function getAgent(proxy: TypedProxyInfo): Agent {
+export function getAgent(proxy: ProxyInfo): Agent {
   return new ProxyAgent(getAgents(proxy));
 }

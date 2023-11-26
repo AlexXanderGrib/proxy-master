@@ -27,7 +27,7 @@ describe("Fetchers", () => {
   describe("File", () => {
     const fetcher = fetchers.file({
       path: "./proxy.txt",
-      autoCheck: false,
+      check: false,
       defaultProxyType: "http"
     });
 
@@ -45,11 +45,42 @@ describe("Fetchers", () => {
           } as any,
 
           {
-            line: "pupa:lupa@localhost:300",
-            lineIndex: 1
+            line: "pupa:lupa@localhost:300"
           }
         ]
       ]);
+    });
+  });
+
+  describe("Combine", () => {
+    const fetcher = fetchers.combine({
+      fetchers: [
+        fetchers.file({
+          path: "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/all/data.txt",
+          check: false
+        }),
+        fetchers.file({
+          path: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt",
+          defaultProxyType: "http",
+          check: false
+        }),
+        fetchers.file({
+          path: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt",
+          defaultProxyType: "socks4",
+          check: false
+        }),
+        fetchers.file({
+          path: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt",
+          defaultProxyType: "socks5",
+          check: false
+        })
+      ]
+    });
+
+    test("should fetch proxies from github", async () => {
+      const proxies = await fetcher.fetch();
+
+      expect(proxies.size).toBeGreaterThan(0);
     });
   });
 });
