@@ -21,7 +21,7 @@
 
   ↳ [`ProxyLineFetcher`](ProxyLineFetcher.md)
 
-  ↳ [`FileFetcher`](FileFetcher.md)
+  ↳ [`CustomFetcher`](CustomFetcher.md)
 
   ↳ [`CombinedFetcher`](internal_.CombinedFetcher.md)
 
@@ -71,7 +71,7 @@
 
 #### Defined in
 
-dist/fetcher.d.ts:12
+dist/fetcher.d.ts:13
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-dist/fetcher.d.ts:13
+dist/fetcher.d.ts:14
 
 ___
 
@@ -91,21 +91,21 @@ ___
 
 #### Defined in
 
-dist/fetcher.d.ts:14
+dist/fetcher.d.ts:15
 
 ## Methods
 
 ### \_fetch
 
-▸ **_fetch**(): `Promise`\<`Map`\<`K`, `T`\>\>
+▸ **_fetch**(): [`MaybePromiseLike`](../modules/internal_.md#maybepromiselike)\<[`MaybeAsyncIterable`](../modules/internal_.md#maybeasynciterable)\<[proxy: K, info: T]\>\>
 
 #### Returns
 
-`Promise`\<`Map`\<`K`, `T`\>\>
+[`MaybePromiseLike`](../modules/internal_.md#maybepromiselike)\<[`MaybeAsyncIterable`](../modules/internal_.md#maybeasynciterable)\<[proxy: K, info: T]\>\>
 
 #### Defined in
 
-dist/fetcher.d.ts:15
+dist/fetcher.d.ts:16
 
 ___
 
@@ -125,7 +125,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:22
+dist/fetcher.d.ts:23
 
 ___
 
@@ -145,7 +145,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:38
+dist/fetcher.d.ts:39
 
 ___
 
@@ -165,7 +165,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:45
+dist/fetcher.d.ts:46
 
 ___
 
@@ -200,7 +200,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:31
+dist/fetcher.d.ts:32
 
 ___
 
@@ -223,4 +223,4 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:52
+dist/fetcher.d.ts:53

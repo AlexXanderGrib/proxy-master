@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { Axios } from "axios";
 import { ProxyFetcher } from "../fetcher";
 import { ProxyPair } from "../pair";
 import queryString from "query-string";
@@ -110,13 +110,7 @@ export type ProxyLineOrderParameters = {
  * @class ProxyLineFetcher
  */
 export class ProxyLineFetcher extends ProxyFetcher<ProxyLineInfo, ProxyPair> {
-  private readonly _axios = axios.create({
-    baseURL: "https://panel.proxyline.net/api/",
-    responseType: "json",
-    paramsSerializer: (parameters) =>
-      queryString.stringify(parameters, { arrayFormat: "none" }),
-    httpsAgent: this.options.proxy ? getAgent(this.options.proxy) : undefined
-  });
+  private readonly _axios: Axios;
 
   /**
    * Creates an instance of ProxyLineFetcher.
@@ -125,6 +119,15 @@ export class ProxyLineFetcher extends ProxyFetcher<ProxyLineInfo, ProxyPair> {
    */
   constructor(public readonly options: ProxyLineFetcherOptions) {
     super();
+
+    this._axios = axios.create({
+      baseURL: "https://panel.proxyline.net/api/",
+      responseType: "json",
+      paramsSerializer: (parameters) =>
+        queryString.stringify(parameters, { arrayFormat: "none" }),
+      httpsAgent: this.options.proxy ? getAgent(this.options.proxy) : undefined
+    });
+
     this._axios.interceptors.request.use((config) => {
       if (!config.url?.endsWith("/")) {
         config.url += "/";

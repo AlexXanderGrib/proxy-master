@@ -6,7 +6,7 @@
 
 ## Hierarchy
 
-- [`ProxyFetcher`](ProxyFetcher.md)\<[`FileInfo`](../modules.md#fileinfo)\>
+- [`CustomFetcher`](CustomFetcher.md)\<[`FileInfo`](../modules.md#fileinfo)\>
 
   ↳ **`FileFetcher`**
 
@@ -20,15 +20,9 @@
 
 - [$\_infoType](FileFetcher.md#$_infotype)
 - [$\_proxyType](FileFetcher.md#$_proxytype)
-- [\_events](FileFetcher.md#_events)
 - [\_getFile](FileFetcher.md#_getfile)
-- [\_invalid](FileFetcher.md#_invalid)
-- [\_valid](FileFetcher.md#_valid)
-- [options](FileFetcher.md#options)
-
-### Accessors
-
 - [events](FileFetcher.md#events)
+- [options](FileFetcher.md#options)
 
 ### Methods
 
@@ -63,11 +57,11 @@ FileFetcher
 
 #### Overrides
 
-[ProxyFetcher](ProxyFetcher.md).[constructor](ProxyFetcher.md#constructor)
+[CustomFetcher](CustomFetcher.md).[constructor](CustomFetcher.md#constructor)
 
 #### Defined in
 
-dist/fetchers/file.d.ts:48
+dist/fetchers/file.d.ts:28
 
 ## Properties
 
@@ -77,11 +71,11 @@ dist/fetchers/file.d.ts:48
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[$_infoType](ProxyFetcher.md#$_infotype)
+[CustomFetcher](CustomFetcher.md).[$_infoType](CustomFetcher.md#$_infotype)
 
 #### Defined in
 
-dist/fetcher.d.ts:12
+dist/fetcher.d.ts:13
 
 ___
 
@@ -91,21 +85,11 @@ ___
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[$_proxyType](ProxyFetcher.md#$_proxytype)
+[CustomFetcher](CustomFetcher.md).[$_proxyType](CustomFetcher.md#$_proxytype)
 
 #### Defined in
 
-dist/fetcher.d.ts:13
-
-___
-
-### \_events
-
-• `Private` `Readonly` **\_events**: `any`
-
-#### Defined in
-
-dist/fetchers/file.d.ts:34
+dist/fetcher.d.ts:14
 
 ___
 
@@ -119,27 +103,21 @@ FileFetcher
 
 #### Defined in
 
-dist/fetchers/file.d.ts:58
+dist/fetchers/file.d.ts:36
 
 ___
 
-### \_invalid
+### events
 
-• `Private` `Readonly` **\_invalid**: `any`
+• `Readonly` **events**: `EventEmitter`\<[`CustomFetcherEvents`](../modules.md#customfetcherevents), `any`\>
 
-#### Defined in
+#### Inherited from
 
-dist/fetchers/file.d.ts:49
-
-___
-
-### \_valid
-
-• `Private` `Readonly` **\_valid**: `any`
+[CustomFetcher](CustomFetcher.md).[events](CustomFetcher.md#events)
 
 #### Defined in
 
-dist/fetchers/file.d.ts:50
+dist/fetchers/custom.d.ts:38
 
 ___
 
@@ -147,51 +125,37 @@ ___
 
 • `Readonly` **options**: [`FileFetcherOptions`](../modules.md#filefetcheroptions)
 
-#### Defined in
+#### Overrides
 
-dist/fetchers/file.d.ts:33
-
-## Accessors
-
-### events
-
-• `get` **events**(): `EventEmitter`\<[`FileFetcherEvents`](../modules.md#filefetcherevents), `any`\>
-
-#### Returns
-
-`EventEmitter`\<[`FileFetcherEvents`](../modules.md#filefetcherevents), `any`\>
-
-**`Memberof`**
-
-FileFetcher
+[CustomFetcher](CustomFetcher.md).[options](CustomFetcher.md#options)
 
 #### Defined in
 
-dist/fetchers/file.d.ts:42
+dist/fetchers/file.d.ts:22
 
 ## Methods
 
 ### \_fetch
 
-▸ **_fetch**(): `Promise`\<`Map`\<[`ProxyInfo`](../modules.md#proxyinfo), [`FileInfo`](../modules.md#fileinfo)\>\>
+▸ **_fetch**(): `AsyncIterable`\<[[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)]\>
 
 #### Returns
 
-`Promise`\<`Map`\<[`ProxyInfo`](../modules.md#proxyinfo), [`FileInfo`](../modules.md#fileinfo)\>\>
+`AsyncIterable`\<[[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)]\>
 
-{Promise<Map<ProxyInfo, FileInfo>>}
+{Promise<Map<Mutable<ProxyInfo>, T>>}
 
 **`Memberof`**
 
-FileFetcher
+CustomFetcher
 
-#### Overrides
+#### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[_fetch](ProxyFetcher.md#_fetch)
+[CustomFetcher](CustomFetcher.md).[_fetch](CustomFetcher.md#_fetch)
 
 #### Defined in
 
-dist/fetchers/file.d.ts:66
+dist/fetchers/custom.d.ts:62
 
 ___
 
@@ -211,11 +175,11 @@ ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[fetch](ProxyFetcher.md#fetch)
+[CustomFetcher](CustomFetcher.md).[fetch](CustomFetcher.md#fetch)
 
 #### Defined in
 
-dist/fetcher.d.ts:22
+dist/fetcher.d.ts:23
 
 ___
 
@@ -235,11 +199,11 @@ ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[get](ProxyFetcher.md#get)
+[CustomFetcher](CustomFetcher.md).[get](CustomFetcher.md#get)
 
 #### Defined in
 
-dist/fetcher.d.ts:38
+dist/fetcher.d.ts:39
 
 ___
 
@@ -259,11 +223,11 @@ ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[random](ProxyFetcher.md#random)
+[CustomFetcher](CustomFetcher.md).[random](CustomFetcher.md#random)
 
 #### Defined in
 
-dist/fetcher.d.ts:45
+dist/fetcher.d.ts:46
 
 ___
 
@@ -298,11 +262,11 @@ ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[refetchOnInterval](ProxyFetcher.md#refetchoninterval)
+[CustomFetcher](CustomFetcher.md).[refetchOnInterval](CustomFetcher.md#refetchoninterval)
 
 #### Defined in
 
-dist/fetcher.d.ts:31
+dist/fetcher.d.ts:32
 
 ___
 
@@ -325,8 +289,8 @@ ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[toJSON](ProxyFetcher.md#tojson)
+[CustomFetcher](CustomFetcher.md).[toJSON](CustomFetcher.md#tojson)
 
 #### Defined in
 
-dist/fetcher.d.ts:52
+dist/fetcher.d.ts:53

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { Axios } from "axios";
 import { ProxyFetcher } from "../fetcher";
 import { ProxyInfo } from "../parser";
 import queryString from "query-string";
@@ -62,13 +62,7 @@ export type Proxy6Proxy = {
  * @extends {ProxyFetcher<Proxy6Info>}
  */
 export class Proxy6Fetcher extends ProxyFetcher<Proxy6Info> {
-  private readonly _axios = axios.create({
-    baseURL: `https://proxy6.net/api/${this.options.apiKey}/`,
-    paramsSerializer: (parameters) =>
-      queryString.stringify(parameters, { arrayFormat: "comma" }),
-
-    httpsAgent: this.options.proxy ? getAgent(this.options.proxy) : undefined
-  });
+  private readonly _axios: Axios;
 
   /**
    * Creates an instance of Proxy6Fetcher.
@@ -77,6 +71,13 @@ export class Proxy6Fetcher extends ProxyFetcher<Proxy6Info> {
    */
   constructor(public readonly options: Proxy6FetcherOptions) {
     super();
+    this._axios = axios.create({
+      baseURL: `https://proxy6.net/api/${this.options.apiKey}/`,
+      paramsSerializer: (parameters) =>
+        queryString.stringify(parameters, { arrayFormat: "comma" }),
+
+      httpsAgent: this.options.proxy ? getAgent(this.options.proxy) : undefined
+    });
   }
 
   /**

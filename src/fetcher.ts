@@ -1,4 +1,5 @@
 import { Mutable, AnyProxyInfo, ProxyInfo } from "./parser";
+import { MaybeAsyncIterable, MaybePromiseLike } from "./types";
 
 /**
  *
@@ -15,7 +16,9 @@ export abstract class ProxyFetcher<
   protected $_infoType!: T;
   protected $_proxyType!: K;
   private _proxies = new Map<K, T>();
-  protected abstract _fetch(): Promise<Map<K, T>>;
+  protected abstract _fetch(): MaybePromiseLike<
+    MaybeAsyncIterable<[proxy: K, info: T]>
+  >;
 
   /**
    *
@@ -24,7 +27,14 @@ export abstract class ProxyFetcher<
    * @memberof ProxyFetcher
    */
   async fetch(): Promise<Map<K, T>> {
-    this._proxies = await this._fetch();
+    const copy = new Map<K, T>();
+
+    for await (const [proxy, info] of await this._fetch()) {
+      copy.set(proxy, info);
+      this._proxies.set(proxy, info);
+    }
+
+    this._proxies = copy;
     return this.get();
   }
 

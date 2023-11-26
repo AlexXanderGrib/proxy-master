@@ -10,6 +10,7 @@
 
 ### Classes
 
+- [CustomFetcher](classes/CustomFetcher.md)
 - [FileFetcher](classes/FileFetcher.md)
 - [Proxy6Fetcher](classes/Proxy6Fetcher.md)
 - [ProxyFetcher](classes/ProxyFetcher.md)
@@ -20,15 +21,18 @@
 
 - [AnyProxyInfo](modules.md#anyproxyinfo)
 - [CheckedProxy](modules.md#checkedproxy)
-- [FileFetcherEvents](modules.md#filefetcherevents)
+- [CheckerOptions](modules.md#checkeroptions)
+- [CustomFetcherEvents](modules.md#customfetcherevents)
+- [CustomFetcherFetch](modules.md#customfetcherfetch)
+- [CustomFetcherOptions](modules.md#customfetcheroptions)
 - [FileFetcherOptions](modules.md#filefetcheroptions)
 - [FileInfo](modules.md#fileinfo)
 - [HttpLikeProxy](modules.md#httplikeproxy)
 - [HttpProxy](modules.md#httpproxy)
 - [HttpsProxy](modules.md#httpsproxy)
 - [Mutable](modules.md#mutable)
+- [Proxy6FetcherOptions](modules.md#proxy6fetcheroptions)
 - [Proxy6Info](modules.md#proxy6info)
-- [Proxy6Options](modules.md#proxy6options)
 - [Proxy6Proxy](modules.md#proxy6proxy)
 - [Proxy6Response](modules.md#proxy6response)
 - [ProxyInfo](modules.md#proxyinfo)
@@ -101,31 +105,75 @@ dist/checker.d.ts:4
 
 ___
 
-### FileFetcherEvents
+### CheckerOptions
 
-Ƭ **FileFetcherEvents**: `Object`
+Ƭ **CheckerOptions**: \{ `allowHeuristics?`: `boolean` ; `signal?`: `AbortSignal` ; `timeout?`: `number` ; `url?`: `string`  } & [`ParallelMapOptions`](modules/internal_.md#parallelmapoptions)
+
+#### Defined in
+
+dist/checker.d.ts:7
+
+___
+
+### CustomFetcherEvents
+
+Ƭ **CustomFetcherEvents**: `Object`
 
 #### Type declaration
 
 | Name | Type |
 | :------ | :------ |
 | `checked:failed` | (`line`: `string`, `error`: `unknown`) => `void` |
-| `checked:valid` | (`proxy`: [`ProxyInfo`](modules.md#proxyinfo), `file`: [`FileInfo`](modules.md#fileinfo)) => `void` |
-| `fetch:failed` | (`path`: `string`, `error`: `unknown`) => `void` |
+| `checked:valid` | (`proxy`: [`CheckedProxy`](modules.md#checkedproxy)) => `void` |
+| `fetch:failed` | (`error`: `unknown`) => `void` |
 
 #### Defined in
 
-dist/fetchers/file.d.ts:20
+dist/fetchers/custom.d.ts:19
+
+___
+
+### CustomFetcherFetch
+
+Ƭ **CustomFetcherFetch**\<`T`\>: () => [`MaybePromiseLike`](modules/internal_.md#maybepromiselike)\<[`MaybeAsyncIterable`](modules/internal_.md#maybeasynciterable)\<`T` extends `never` ? [`AnyProxy`](modules/internal_.md#anyproxy) : [`ProxyWithMeta`](modules/internal_.md#proxywithmeta)\<`T`\>\>\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Type declaration
+
+▸ (): [`MaybePromiseLike`](modules/internal_.md#maybepromiselike)\<[`MaybeAsyncIterable`](modules/internal_.md#maybeasynciterable)\<`T` extends `never` ? [`AnyProxy`](modules/internal_.md#anyproxy) : [`ProxyWithMeta`](modules/internal_.md#proxywithmeta)\<`T`\>\>\>
+
+##### Returns
+
+[`MaybePromiseLike`](modules/internal_.md#maybepromiselike)\<[`MaybeAsyncIterable`](modules/internal_.md#maybeasynciterable)\<`T` extends `never` ? [`AnyProxy`](modules/internal_.md#anyproxy) : [`ProxyWithMeta`](modules/internal_.md#proxywithmeta)\<`T`\>\>\>
+
+#### Defined in
+
+dist/fetchers/custom.d.ts:24
+
+___
+
+### CustomFetcherOptions
+
+Ƭ **CustomFetcherOptions**: \{ `check?`: `boolean` ; `checkTimeout?`: `number` ; `checkUrl?`: `string` ; `defaultProxyType?`: [`ProxyType`](modules.md#proxytype)  } & [`ParallelMapOptions`](modules/internal_.md#parallelmapoptions)
+
+#### Defined in
+
+dist/fetchers/custom.d.ts:13
 
 ___
 
 ### FileFetcherOptions
 
-Ƭ **FileFetcherOptions**: \{ `check?`: `boolean` ; `checkTimeout?`: `number` ; `checkUrl?`: `string` ; `defaultProxyType?`: [`ProxyType`](modules.md#proxytype) ; `fileEncoding?`: `BufferEncoding` ; `path`: `PathLike` ; `proxy?`: [`ProxyInfo`](modules.md#proxyinfo)  } & [`ParallelMapOptions`](modules/internal_.md#parallelmapoptions)
+Ƭ **FileFetcherOptions**: `Omit`\<[`CustomFetcherOptions`](modules.md#customfetcheroptions), ``"fetch"``\> & \{ `fileEncoding?`: `BufferEncoding` ; `path`: `PathLike` ; `proxy?`: [`ProxyInfo`](modules.md#proxyinfo)  }
 
 #### Defined in
 
-dist/fetchers/file.d.ts:8
+dist/fetchers/file.d.ts:6
 
 ___
 
@@ -141,7 +189,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/file.d.ts:17
+dist/fetchers/file.d.ts:11
 
 ___
 
@@ -191,6 +239,27 @@ dist/parser.d.ts:19
 
 ___
 
+### Proxy6FetcherOptions
+
+Ƭ **Proxy6FetcherOptions**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `apiKey` | `string` |
+| `description?` | `string` |
+| `limit?` | `number` |
+| `page?` | `number` |
+| `proxy?` | [`ProxyInfo`](modules.md#proxyinfo) |
+| `state?` | ``"active"`` \| ``"expired"`` \| ``"expiring"`` \| ``"all"`` |
+
+#### Defined in
+
+dist/fetchers/proxy6.d.ts:11
+
+___
+
 ### Proxy6Info
 
 Ƭ **Proxy6Info**: `Object`
@@ -209,27 +278,6 @@ ___
 #### Defined in
 
 dist/fetchers/proxy6.d.ts:3
-
-___
-
-### Proxy6Options
-
-Ƭ **Proxy6Options**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `apiKey` | `string` |
-| `description?` | `string` |
-| `limit?` | `number` |
-| `page?` | `number` |
-| `proxy?` | [`ProxyInfo`](modules.md#proxyinfo) |
-| `state?` | ``"active"`` \| ``"expired"`` \| ``"expiring"`` \| ``"all"`` |
-
-#### Defined in
-
-dist/fetchers/proxy6.d.ts:11
 
 ___
 
@@ -510,11 +558,11 @@ dist/parser.d.ts:18
 
 ### fetchers
 
-• `Const` **fetchers**: `Readonly`\<\{ `combine`: (`options`: [`CombinedFetcherOptions`](modules/internal_.md#combinedfetcheroptions)) => [`CombinedFetcher`](classes/internal_.CombinedFetcher.md) ; `file`: (`options`: [`FileFetcherOptions`](modules.md#filefetcheroptions)) => [`FileFetcher`](classes/FileFetcher.md) ; `proxy6`: (`options`: [`Proxy6Options`](modules.md#proxy6options)) => [`Proxy6Fetcher`](classes/Proxy6Fetcher.md) ; `proxyLine`: (`options`: [`ProxyLineFetcherOptions`](modules.md#proxylinefetcheroptions)) => [`ProxyLineFetcher`](classes/ProxyLineFetcher.md)  }\>
+• `Const` **fetchers**: `Readonly`\<\{ `combine`: (`options`: [`CombinedFetcherOptions`](modules/internal_.md#combinedfetcheroptions)) => [`CombinedFetcher`](classes/internal_.CombinedFetcher.md) ; `custom`: \<T\>(`fetch`: [`CustomFetcherFetch`](modules.md#customfetcherfetch)\<`T`\>, `options?`: [`CustomFetcherOptions`](modules.md#customfetcheroptions)) => [`CustomFetcher`](classes/CustomFetcher.md)\<`T`\> ; `file`: (`options`: [`FileFetcherOptions`](modules.md#filefetcheroptions)) => [`FileFetcher`](classes/FileFetcher.md) ; `proxy6`: (`options`: [`Proxy6FetcherOptions`](modules.md#proxy6fetcheroptions)) => [`Proxy6Fetcher`](classes/Proxy6Fetcher.md) ; `proxyLine`: (`options`: [`ProxyLineFetcherOptions`](modules.md#proxylinefetcheroptions)) => [`ProxyLineFetcher`](classes/ProxyLineFetcher.md)  }\>
 
 #### Defined in
 
-dist/fetchers/index.d.ts:5
+dist/fetchers/index.d.ts:6
 
 ## Functions
 
@@ -549,7 +597,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `proxy` | [`AnyProxyInfo`](modules.md#anyproxyinfo) |
-| `options?` | [`CheckerOptions`](modules/internal_.md#checkeroptions) |
+| `options?` | [`CheckerOptions`](modules.md#checkeroptions) |
 
 #### Returns
 

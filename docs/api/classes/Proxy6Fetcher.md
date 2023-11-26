@@ -45,7 +45,7 @@ Creates an instance of Proxy6Fetcher.
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`Proxy6Options`](../modules.md#proxy6options) |
+| `options` | [`Proxy6FetcherOptions`](../modules.md#proxy6fetcheroptions) |
 
 #### Returns
 
@@ -75,7 +75,7 @@ dist/fetchers/proxy6.d.ts:61
 
 #### Defined in
 
-dist/fetcher.d.ts:12
+dist/fetcher.d.ts:13
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-dist/fetcher.d.ts:13
+dist/fetcher.d.ts:14
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 ### options
 
-• `Readonly` **options**: [`Proxy6Options`](../modules.md#proxy6options)
+• `Readonly` **options**: [`Proxy6FetcherOptions`](../modules.md#proxy6fetcheroptions)
 
 #### Defined in
 
@@ -157,7 +157,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:22
+dist/fetcher.d.ts:23
 
 ___
 
@@ -181,7 +181,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:38
+dist/fetcher.d.ts:39
 
 ___
 
@@ -205,7 +205,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:45
+dist/fetcher.d.ts:46
 
 ___
 
@@ -244,7 +244,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:31
+dist/fetcher.d.ts:32
 
 ___
 
@@ -298,4 +298,4 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:52
+dist/fetcher.d.ts:53

@@ -77,7 +77,7 @@ dist/fetchers/combine.d.ts:29
 
 #### Defined in
 
-dist/fetcher.d.ts:12
+dist/fetcher.d.ts:13
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-dist/fetcher.d.ts:13
+dist/fetcher.d.ts:14
 
 ___
 
@@ -149,7 +149,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:22
+dist/fetcher.d.ts:23
 
 ___
 
@@ -173,7 +173,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:38
+dist/fetcher.d.ts:39
 
 ___
 
@@ -197,7 +197,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:45
+dist/fetcher.d.ts:46
 
 ___
 
@@ -236,7 +236,7 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:31
+dist/fetcher.d.ts:32
 
 ___
 
@@ -263,4 +263,4 @@ ProxyFetcher
 
 #### Defined in
 
-dist/fetcher.d.ts:52
+dist/fetcher.d.ts:53

@@ -1,7 +1,7 @@
 export { getAgent, getAgents } from "./agent";
 export { getDispatcher } from "./undici";
 export { anonymizeProxy, closeAnonymizedProxy } from "./anonymize";
-export { check, CheckedProxy } from "./checker";
+export { check, CheckedProxy, CheckerOptions } from "./checker";
 export { ProxyFetcher } from "./fetcher";
 export { ProxyPair } from "./pair";
 export {
@@ -30,7 +30,7 @@ export { createSocksSocket } from "./socks";
 export {
   Proxy6Fetcher,
   Proxy6Info,
-  Proxy6FetcherOptions as Proxy6Options,
+  Proxy6FetcherOptions,
   Proxy6Proxy,
   Proxy6Response
 } from "./fetchers/proxy6";
@@ -45,10 +45,11 @@ export {
   ProxyLineRenewParameters,
   ProxyLineResponse
 } from "./fetchers/proxyline";
+export { FileFetcher, FileInfo, FileFetcherOptions } from "./fetchers/file";
 export {
-  FileFetcher,
-  FileInfo,
-  FileFetcherOptions,
-  FileFetcherEvents
-} from "./fetchers/file";
+  CustomFetcher,
+  CustomFetcherEvents,
+  CustomFetcherFetch,
+  CustomFetcherOptions
+} from "./fetchers/custom";
 export { fetchers } from "./fetchers/index";

@@ -10,19 +10,22 @@
 
 ### Type Aliases
 
-- [CheckerOptions](internal_.md#checkeroptions)
+- [AnyProxy](internal_.md#anyproxy)
 - [CombinedFetcherOptions](internal_.md#combinedfetcheroptions)
+- [MaybeAsyncIterable](internal_.md#maybeasynciterable)
+- [MaybePromiseLike](internal_.md#maybepromiselike)
 - [ParallelMapOptions](internal_.md#parallelmapoptions)
+- [ProxyWithMeta](internal_.md#proxywithmeta)
 
 ## Type Aliases
 
-### CheckerOptions
+### AnyProxy
 
-Ƭ **CheckerOptions**: \{ `allowHeuristics?`: `boolean` ; `signal?`: `AbortSignal` ; `timeout?`: `number` ; `url?`: `string`  } & [`ParallelMapOptions`](internal_.md#parallelmapoptions)
+Ƭ **AnyProxy**: `string` \| `URL` \| [`AnyProxyInfo`](../modules.md#anyproxyinfo)
 
 #### Defined in
 
-dist/checker.d.ts:7
+dist/fetchers/custom.d.ts:8
 
 ___
 
@@ -33,6 +36,38 @@ ___
 #### Defined in
 
 dist/fetchers/combine.d.ts:4
+
+___
+
+### MaybeAsyncIterable
+
+Ƭ **MaybeAsyncIterable**\<`T`\>: `Iterable`\<`T`\> \| `AsyncIterable`\<`T`\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Defined in
+
+dist/types.d.ts:1
+
+___
+
+### MaybePromiseLike
+
+Ƭ **MaybePromiseLike**\<`T`\>: `T` \| `PromiseLike`\<`T`\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Defined in
+
+dist/types.d.ts:2
 
 ___
 
@@ -49,3 +84,19 @@ ___
 #### Defined in
 
 dist/parallel.d.ts:1
+
+___
+
+### ProxyWithMeta
+
+Ƭ **ProxyWithMeta**\<`T`\>: [proxy: AnyProxy, info: T] \| \{ `info`: `T` ; `proxy`: [`AnyProxy`](internal_.md#anyproxy)  }
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Defined in
+
+dist/fetchers/custom.d.ts:9

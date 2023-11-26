@@ -1,4 +1,4 @@
-import { fetch } from "undici";
+import undici from "undici";
 import { getDispatcher } from "../undici";
 import { validHttp, validSocks } from "./proxies";
 import { getAgent, getAgents } from "../agent";
@@ -11,7 +11,7 @@ describe("undici", () => {
   test("should connect through https", async () => {
     const dispatcher = getDispatcher(validHttp);
 
-    const response = await fetch(IP_URL, { dispatcher });
+    const response = await undici.fetch(IP_URL, { dispatcher });
     const text = await response.text();
 
     expect(text).toBe(validHttp.host);
@@ -20,7 +20,7 @@ describe("undici", () => {
   test("should connect through socks", async () => {
     const dispatcher = getDispatcher(validSocks);
 
-    const response = await fetch(IP_URL, { dispatcher });
+    const response = await undici.fetch(IP_URL, { dispatcher });
     const text = await response.text();
 
     expect(text).toBe(validSocks.host);
@@ -68,3 +68,25 @@ describe("node-fetch", () => {
     expect(text).toBe(validSocks.host);
   });
 });
+
+if (typeof fetch !== "undefined") {
+  describe("node.js fetch", () => {
+    test("should connect through https", async () => {
+      const dispatcher = getDispatcher(validHttp);
+
+      const response = await fetch(IP_URL, { dispatcher });
+      const text = await response.text();
+
+      expect(text).toBe(validHttp.host);
+    });
+
+    test("should connect through socks", async () => {
+      const dispatcher = getDispatcher(validSocks);
+
+      const response = await fetch(IP_URL, { dispatcher });
+      const text = await response.text();
+
+      expect(text).toBe(validSocks.host);
+    });
+  });
+}
