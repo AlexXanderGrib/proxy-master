@@ -1,5 +1,5 @@
 import { Mutable, AnyProxyInfo, ProxyInfo, ProxyType, isTyped } from "./parser";
-import { getAgent } from "./agent";
+import { getAgents } from "./agent";
 
 import axios from "axios";
 import { ParallelMapOptions, getMultiTryResult, parallelMap } from "./parallel";
@@ -7,7 +7,7 @@ import { ParallelMapOptions, getMultiTryResult, parallelMap } from "./parallel";
 export type CheckedProxy = Mutable<ProxyInfo> & {
   timeout: number;
 };
-const proxyTypes: ProxyType[] = ["socks5", "http"];
+const proxyTypes: ProxyType[] = ["socks5", "http", "https", "socks4"];
 
 export type CheckerOptions = {
   url?: string;
@@ -25,7 +25,7 @@ export type CheckerOptions = {
 export async function check(
   proxy: AnyProxyInfo,
   {
-    url: checkingUrl = "https://google.com",
+    url: checkingUrl = "http://example.com",
     timeout = 3000,
     signal = undefined as AbortSignal | undefined,
     allowHeuristics = true,
@@ -48,18 +48,20 @@ export async function check(
       signal?.addEventListener("abort", () => cancel("Aborted"));
     });
 
-    const agent = getAgent(proxy);
+    const { httpAgent, httpsAgent } = getAgents(proxy);
 
     try {
       await axios.get(checkingUrl, {
         signal,
         timeout,
         cancelToken,
-        httpAgent: agent,
-        httpsAgent: agent
+        httpAgent,
+        httpsAgent,
+        validateStatus: (status) => status !== 407
       });
     } finally {
-      agent.destroy();
+      httpAgent.destroy();
+      httpsAgent.destroy();
 
       if (timeoutObject) {
         clearTimeout(timeoutObject);
@@ -67,7 +69,6 @@ export async function check(
     }
 
     const diff = Date.now() - start;
-
     return { ...proxy, timeout: diff };
   }
 

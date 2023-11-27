@@ -1,7 +1,7 @@
 import { EventEmitter } from "eventemitter3";
 import { CheckedProxy, check } from "../checker";
 import { ProxyFetcher } from "../fetcher";
-import { ParallelMapOptions } from "../parallel";
+import { PARALLEL_COUNT, ParallelMapOptions, threadedMap } from "../parallel";
 import {
   AnyProxyInfo,
   Mutable,
@@ -11,7 +11,6 @@ import {
   parseRequireType,
   stringifyToUrl
 } from "../parser";
-import { ProxyParsingError } from "../errors";
 import { MaybeAsyncIterable, MaybePromiseLike } from "../types";
 
 type AnyProxy = string | URL | AnyProxyInfo;
@@ -24,6 +23,7 @@ export type CustomFetcherOptions = {
   checkUrl?: string;
   checkTimeout?: number;
   defaultProxyType?: ProxyType;
+  filter?: (proxy: AnyProxyInfo) => boolean;
 } & ParallelMapOptions;
 
 export type CustomFetcherEvents = {
@@ -39,14 +39,39 @@ export type CustomFetcherFetch<T> = () => MaybePromiseLike<
 /**
  *
  *
+ * @template T
+ * @param {(AnyProxy | ProxyWithMeta<T>)} proxy
+ * @return {*}  {[string, T?]}
+ */
+function anyProxyToString<T>(proxy: AnyProxy | ProxyWithMeta<T>): [string, T?] {
+  if (typeof proxy === "string") {
+    return [proxy];
+  } else if (proxy instanceof URL) {
+    return [proxy.toString()];
+  } else if (typeof proxy === "object" && "host" in proxy && "port" in proxy) {
+    return [stringifyToUrl(proxy)];
+  } else if (typeof proxy === "object" && "proxy" in proxy) {
+    const result = anyProxyToString<T>(proxy.proxy);
+    result[1] = proxy.info;
+    return result;
+  } else if (Array.isArray(proxy)) {
+    const result = anyProxyToString<T>(proxy[0]);
+    result[1] = proxy[1];
+    return result;
+  } else {
+    throw new TypeError("Invalid proxy/info pair");
+  }
+}
+
+/**
+ *
+ *
  * @export
  * @class CustomFetcher
  * @extends {ProxyFetcher<T>}
  * @template T
  */
 export class CustomFetcher<T = never> extends ProxyFetcher<T> {
-  private readonly _invalid = new Set<string>();
-  private readonly _valid = new Map<string, ProxyInfo>();
   private readonly _customFetch: CustomFetcherFetch<T>;
   public readonly events = new EventEmitter<CustomFetcherEvents>();
 
@@ -68,48 +93,39 @@ export class CustomFetcher<T = never> extends ProxyFetcher<T> {
    *
    *
    * @private
-   * @param {(string | URL | AnyProxyInfo)} proxy
-   * @return {*}
+   * @return {*}  {AsyncIterable<[AnyProxyInfo, T]>}
    * @memberof CustomFetcher
    */
-  private async _autoCheck(proxy: AnyProxy): Promise<Mutable<ProxyInfo>> {
-    if (proxy instanceof URL) {
-      proxy = proxy.toString();
-    } else if (typeof proxy === "object") {
-      proxy = stringifyToUrl(proxy);
-    }
-
-    const cachedValid = this._valid.get(proxy);
-
-    if (cachedValid) {
-      return cachedValid;
-    }
-
-    if (this._invalid.has(proxy)) {
-      throw new Error("Known invalid proxy");
-    }
+  private async *_prefetch(): AsyncIterable<[string, T]> {
+    let fetched: MaybeAsyncIterable<AnyProxy | ProxyWithMeta<T>>;
 
     try {
-      if (this.options.check ?? true) {
-        const result = await check(parse(proxy), {
-          url: this.options.checkUrl,
-          timeout: this.options.checkTimeout
-        });
-
-        this._valid.set(proxy, result);
-        this.events.emit("checked:valid", result);
-
-        return result;
-      } else {
-        return parseRequireType(proxy, this.options.defaultProxyType);
-      }
+      fetched = await this._customFetch();
     } catch (error) {
-      if (error instanceof ProxyParsingError) {
-        this._invalid.add(proxy);
+      this.events.emit("fetch:failed", error);
+      throw error;
+    }
+
+    const keep = this.options.filter ?? (() => true);
+
+    for await (const result of fetched) {
+      if (!result) {
+        continue;
       }
 
-      this.events.emit("checked:failed", proxy, error);
-      throw error;
+      const [line, info] = anyProxyToString(result) as [string, T];
+
+      try {
+        const parsed = parse(line);
+
+        if (!keep(parsed)) {
+          continue;
+        }
+      } catch {
+        continue;
+      }
+
+      yield [line, info];
     }
   }
 
@@ -121,48 +137,35 @@ export class CustomFetcher<T = never> extends ProxyFetcher<T> {
    * @memberof CustomFetcher
    */
   protected async *_fetch(): AsyncIterable<[Mutable<ProxyInfo>, T]> {
-    let fetched: MaybeAsyncIterable<AnyProxy | ProxyWithMeta<T>>;
+    yield* threadedMap(
+      this._prefetch(),
+      async ([proxy, info]) => {
+        if (this.options.check ?? true) {
+          const parsed = parse(proxy);
 
-    try {
-      fetched = await this._customFetch();
-    } catch (error) {
-      this.events.emit("fetch:failed", error);
-      throw error;
-    }
+          const checked = await check(parsed, {
+            url: this.options.checkUrl,
+            timeout: this.options.checkTimeout
+          });
 
-    for await (const result of fetched) {
-      if (!result) {
-        continue;
+          this.events.emit("checked:valid", checked);
+
+          return [checked, info];
+        } else {
+          const checked = parseRequireType(
+            proxy,
+            this.options.defaultProxyType
+          );
+          return [checked, info];
+        }
+      },
+      {
+        key: ([proxy]) => proxy,
+        onError: (error, [line]) =>
+          this.events.emit("checked:failed", line, error),
+
+        parallel: PARALLEL_COUNT * 10
       }
-
-      let proxy: AnyProxy;
-      let info: T | undefined;
-
-      if (typeof result === "string") {
-        proxy = result;
-      } else if (result instanceof URL) {
-        proxy = result;
-      } else if (
-        typeof result === "object" &&
-        "host" in result &&
-        "port" in result
-      ) {
-        proxy = result;
-      } else if (typeof result === "object" && "proxy" in result) {
-        proxy = result.proxy;
-        info = result.info;
-      } else if (Array.isArray(result)) {
-        [proxy, info] = result;
-      } else {
-        continue;
-      }
-
-      try {
-        const checked = await this._autoCheck(proxy);
-        yield [checked, info as T];
-      } catch {
-        continue;
-      }
-    }
+    );
   }
 }

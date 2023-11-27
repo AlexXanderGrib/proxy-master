@@ -63,7 +63,7 @@ ProxyLineFetcher
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:86
+dist/fetchers/proxyline.d.ts:87
 
 ## Properties
 
@@ -101,7 +101,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:80
+dist/fetchers/proxyline.d.ts:81
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:79
+dist/fetchers/proxyline.d.ts:80
 
 ## Methods
 
@@ -135,7 +135,7 @@ ProxyLineFetcher
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:94
+dist/fetchers/proxyline.d.ts:95
 
 ___
 
@@ -165,7 +165,13 @@ ___
 
 ### get
 
-▸ **get**(): `Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)\>
+▸ **get**(`filter?`): `Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`ProxyPair`](ProxyPair.md), `info`: [`ProxyLineInfo`](../modules.md#proxylineinfo)) => `boolean` |
 
 #### Returns
 
@@ -201,7 +207,7 @@ ProxyLineFetcher
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:101
+dist/fetchers/proxyline.d.ts:102
 
 ___
 
@@ -225,13 +231,19 @@ ProxyLineFetcher
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:117
+dist/fetchers/proxyline.d.ts:118
 
 ___
 
 ### random
 
-▸ **random**(): `undefined` \| [[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)]
+▸ **random**(`filter?`): `undefined` \| [[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`ProxyPair`](ProxyPair.md), `info`: [`ProxyLineInfo`](../modules.md#proxylineinfo)) => `boolean` |
 
 #### Returns
 
@@ -314,7 +326,7 @@ ProxyLineFetcher
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:109
+dist/fetchers/proxyline.d.ts:110
 
 ___
 

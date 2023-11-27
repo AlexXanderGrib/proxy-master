@@ -1,5 +1,14 @@
 export { getAgent, getAgents } from "./agent";
 export { getDispatcher } from "./undici";
+export {
+  PARALLEL_COUNT,
+  ParallelMapOptions,
+  ThreadedMapOptions,
+  getMultiTryResult,
+  parallelMap,
+  sleep,
+  threadedMap
+} from "./parallel";
 export { anonymizeProxy, closeAnonymizedProxy } from "./anonymize";
 export { check, CheckedProxy, CheckerOptions } from "./checker";
 export { ProxyFetcher } from "./fetcher";

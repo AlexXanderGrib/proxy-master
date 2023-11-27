@@ -2,8 +2,7 @@ import axios, { Axios } from "axios";
 import { ProxyFetcher } from "../fetcher";
 import { ProxyPair } from "../pair";
 import queryString from "query-string";
-import { ProxyInfo } from "../parser";
-import { getAgent } from "../agent";
+import { Agent } from "node:https";
 
 export type ProxyLineFetcherOptions = {
   apiKey: string;
@@ -24,7 +23,7 @@ export type ProxyLineFetcherOptions = {
   limit?: number;
   offset?: number;
 
-  proxy?: ProxyInfo;
+  agent?: Agent;
 };
 
 export type ProxyLineInfo = {
@@ -125,7 +124,7 @@ export class ProxyLineFetcher extends ProxyFetcher<ProxyLineInfo, ProxyPair> {
       responseType: "json",
       paramsSerializer: (parameters) =>
         queryString.stringify(parameters, { arrayFormat: "none" }),
-      httpsAgent: this.options.proxy ? getAgent(this.options.proxy) : undefined
+      httpsAgent: options.agent
     });
 
     this._axios.interceptors.request.use((config) => {

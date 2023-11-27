@@ -97,6 +97,8 @@ ___
 
 • `Private` **\_getFile**: `any`
 
+**`Param`**
+
 **`Memberof`**
 
 FileFetcher
@@ -117,7 +119,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/custom.d.ts:38
+dist/fetchers/custom.d.ts:37
 
 ___
 
@@ -155,7 +157,7 @@ CustomFetcher
 
 #### Defined in
 
-dist/fetchers/custom.d.ts:62
+dist/fetchers/custom.d.ts:60
 
 ___
 
@@ -185,7 +187,13 @@ ___
 
 ### get
 
-▸ **get**(): `Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)\>
+▸ **get**(`filter?`): `Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: [`FileInfo`](../modules.md#fileinfo)) => `boolean` |
 
 #### Returns
 
@@ -209,7 +217,13 @@ ___
 
 ### random
 
-▸ **random**(): `undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)]
+▸ **random**(`filter?`): `undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: [`FileInfo`](../modules.md#fileinfo)) => `boolean` |
 
 #### Returns
 

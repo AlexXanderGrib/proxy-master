@@ -14,8 +14,11 @@
 - [CombinedFetcherOptions](internal_.md#combinedfetcheroptions)
 - [MaybeAsyncIterable](internal_.md#maybeasynciterable)
 - [MaybePromiseLike](internal_.md#maybepromiselike)
-- [ParallelMapOptions](internal_.md#parallelmapoptions)
 - [ProxyWithMeta](internal_.md#proxywithmeta)
+
+### Functions
+
+- [urls](internal_.md#urls)
 
 ## Type Aliases
 
@@ -31,7 +34,7 @@ ___
 
 ### CombinedFetcherOptions
 
-Ƭ **CombinedFetcherOptions**: \{ `allowFetch?`: `boolean` ; `fetchers?`: [`ProxyFetcher`](../classes/ProxyFetcher.md)\<`unknown`\>[]  } & [`ParallelMapOptions`](internal_.md#parallelmapoptions)
+Ƭ **CombinedFetcherOptions**: \{ `allowFetch?`: `boolean` ; `fetchers?`: [`ProxyFetcher`](../classes/ProxyFetcher.md)\<`unknown`\>[]  } & [`ParallelMapOptions`](../modules.md#parallelmapoptions)
 
 #### Defined in
 
@@ -71,22 +74,6 @@ dist/types.d.ts:2
 
 ___
 
-### ParallelMapOptions
-
-Ƭ **ParallelMapOptions**: `Object`
-
-#### Type declaration
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `parallel?` | `number` \| `boolean` | - `true` or undefined - automatically parallelize based on cpu count - `false` or 1, 0 - do not parallelize. Execute map sequentially - any other number - parallelize by this number |
-
-#### Defined in
-
-dist/parallel.d.ts:1
-
-___
-
 ### ProxyWithMeta
 
 Ƭ **ProxyWithMeta**\<`T`\>: [proxy: AnyProxy, info: T] \| \{ `info`: `T` ; `proxy`: [`AnyProxy`](internal_.md#anyproxy)  }
@@ -100,3 +87,23 @@ ___
 #### Defined in
 
 dist/fetchers/custom.d.ts:9
+
+## Functions
+
+### urls
+
+▸ **urls**(`urls`): [`CombinedFetcher`](../classes/internal_.CombinedFetcher.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `urls` | (`string` \| [`ProxyFetcher`](../classes/ProxyFetcher.md)\<`unknown`, [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>\>)[] |
+
+#### Returns
+
+[`CombinedFetcher`](../classes/internal_.CombinedFetcher.md)
+
+#### Defined in
+
+dist/fetchers/index.d.ts:13

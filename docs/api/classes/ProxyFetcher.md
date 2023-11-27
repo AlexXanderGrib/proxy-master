@@ -131,7 +131,13 @@ ___
 
 ### get
 
-▸ **get**(): `Map`\<`K`, `T`\>
+▸ **get**(`filter?`): `Map`\<`K`, `T`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: `K`, `info`: `T`) => `boolean` |
 
 #### Returns
 
@@ -151,7 +157,13 @@ ___
 
 ### random
 
-▸ **random**(): `undefined` \| [`K`, `T`]
+▸ **random**(`filter?`): `undefined` \| [`K`, `T`]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: `K`, `info`: `T`) => `boolean` |
 
 #### Returns
 

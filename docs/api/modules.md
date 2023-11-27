@@ -31,6 +31,7 @@
 - [HttpProxy](modules.md#httpproxy)
 - [HttpsProxy](modules.md#httpsproxy)
 - [Mutable](modules.md#mutable)
+- [ParallelMapOptions](modules.md#parallelmapoptions)
 - [Proxy6FetcherOptions](modules.md#proxy6fetcheroptions)
 - [Proxy6Info](modules.md#proxy6info)
 - [Proxy6Proxy](modules.md#proxy6proxy)
@@ -48,9 +49,11 @@
 - [Socks4Proxy](modules.md#socks4proxy)
 - [Socks5Proxy](modules.md#socks5proxy)
 - [SocksProxy](modules.md#socksproxy)
+- [ThreadedMapOptions](modules.md#threadedmapoptions)
 
 ### Variables
 
+- [PARALLEL\_COUNT](modules.md#parallel_count)
 - [fetchers](modules.md#fetchers)
 
 ### Functions
@@ -62,6 +65,7 @@
 - [getAgent](modules.md#getagent)
 - [getAgents](modules.md#getagents)
 - [getDispatcher](modules.md#getdispatcher)
+- [getMultiTryResult](modules.md#getmultitryresult)
 - [isHttp](modules.md#ishttp)
 - [isHttpLike](modules.md#ishttplike)
 - [isHttps](modules.md#ishttps)
@@ -69,9 +73,12 @@
 - [isSocks4](modules.md#issocks4)
 - [isSocks5](modules.md#issocks5)
 - [isTyped](modules.md#istyped)
+- [parallelMap](modules.md#parallelmap)
 - [parse](modules.md#parse)
 - [parseRequireType](modules.md#parserequiretype)
+- [sleep](modules.md#sleep)
 - [stringifyToUrl](modules.md#stringifytourl)
+- [threadedMap](modules.md#threadedmap)
 
 ## Type Aliases
 
@@ -107,7 +114,7 @@ ___
 
 ### CheckerOptions
 
-Ƭ **CheckerOptions**: \{ `allowHeuristics?`: `boolean` ; `signal?`: `AbortSignal` ; `timeout?`: `number` ; `url?`: `string`  } & [`ParallelMapOptions`](modules/internal_.md#parallelmapoptions)
+Ƭ **CheckerOptions**: \{ `allowHeuristics?`: `boolean` ; `signal?`: `AbortSignal` ; `timeout?`: `number` ; `url?`: `string`  } & [`ParallelMapOptions`](modules.md#parallelmapoptions)
 
 #### Defined in
 
@@ -129,7 +136,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/custom.d.ts:19
+dist/fetchers/custom.d.ts:20
 
 ___
 
@@ -153,13 +160,13 @@ ___
 
 #### Defined in
 
-dist/fetchers/custom.d.ts:24
+dist/fetchers/custom.d.ts:25
 
 ___
 
 ### CustomFetcherOptions
 
-Ƭ **CustomFetcherOptions**: \{ `check?`: `boolean` ; `checkTimeout?`: `number` ; `checkUrl?`: `string` ; `defaultProxyType?`: [`ProxyType`](modules.md#proxytype)  } & [`ParallelMapOptions`](modules/internal_.md#parallelmapoptions)
+Ƭ **CustomFetcherOptions**: \{ `check?`: `boolean` ; `checkTimeout?`: `number` ; `checkUrl?`: `string` ; `defaultProxyType?`: [`ProxyType`](modules.md#proxytype) ; `filter?`: (`proxy`: [`AnyProxyInfo`](modules.md#anyproxyinfo)) => `boolean`  } & [`ParallelMapOptions`](modules.md#parallelmapoptions)
 
 #### Defined in
 
@@ -169,7 +176,7 @@ ___
 
 ### FileFetcherOptions
 
-Ƭ **FileFetcherOptions**: `Omit`\<[`CustomFetcherOptions`](modules.md#customfetcheroptions), ``"fetch"``\> & \{ `fileEncoding?`: `BufferEncoding` ; `path`: `PathLike` ; `proxy?`: [`ProxyInfo`](modules.md#proxyinfo)  }
+Ƭ **FileFetcherOptions**: `Omit`\<[`CustomFetcherOptions`](modules.md#customfetcheroptions), ``"fetch"``\> & \{ `fileEncoding?`: `BufferEncoding` ; `path`: `PathLike` \| `PathLike`[] ; `proxy?`: [`ProxyInfo`](modules.md#proxyinfo)  }
 
 #### Defined in
 
@@ -239,6 +246,22 @@ dist/parser.d.ts:19
 
 ___
 
+### ParallelMapOptions
+
+Ƭ **ParallelMapOptions**: `Object`
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `parallel?` | `number` \| `boolean` | - `true` or undefined - automatically parallelize based on cpu count - `false` or 1, 0 - do not parallelize. Execute map sequentially - any other number - parallelize by this number |
+
+#### Defined in
+
+dist/parallel.d.ts:3
+
+___
+
 ### Proxy6FetcherOptions
 
 Ƭ **Proxy6FetcherOptions**: `Object`
@@ -247,16 +270,16 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `agent?` | `Agent` |
 | `apiKey` | `string` |
 | `description?` | `string` |
 | `limit?` | `number` |
 | `page?` | `number` |
-| `proxy?` | [`ProxyInfo`](modules.md#proxyinfo) |
 | `state?` | ``"active"`` \| ``"expired"`` \| ``"expiring"`` \| ``"all"`` |
 
 #### Defined in
 
-dist/fetchers/proxy6.d.ts:11
+dist/fetchers/proxy6.d.ts:13
 
 ___
 
@@ -277,7 +300,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxy6.d.ts:3
+dist/fetchers/proxy6.d.ts:5
 
 ___
 
@@ -307,7 +330,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxy6.d.ts:29
+dist/fetchers/proxy6.d.ts:31
 
 ___
 
@@ -330,7 +353,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxy6.d.ts:19
+dist/fetchers/proxy6.d.ts:21
 
 ___
 
@@ -358,6 +381,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `agent?` | `Agent` |
 | `apiKey` | `string` |
 | `country?` | `string`[] |
 | `expiryDateAfter?` | `Date` |
@@ -366,7 +390,6 @@ ___
 | `limit?` | `number` |
 | `offset?` | `number` |
 | `orderId?` | `number`[] |
-| `proxy?` | [`ProxyInfo`](modules.md#proxyinfo) |
 | `purchaseDateAfter?` | `Date` |
 | `purchaseDateBefore?` | `Date` |
 | `status?` | ``"active"`` \| ``"expired"`` \| ``"deleted"`` |
@@ -374,7 +397,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:4
+dist/fetchers/proxyline.d.ts:5
 
 ___
 
@@ -391,7 +414,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:51
+dist/fetchers/proxyline.d.ts:52
 
 ___
 
@@ -412,7 +435,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:19
+dist/fetchers/proxyline.d.ts:20
 
 ___
 
@@ -434,7 +457,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:63
+dist/fetchers/proxyline.d.ts:64
 
 ___
 
@@ -444,7 +467,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:57
+dist/fetchers/proxyline.d.ts:58
 
 ___
 
@@ -475,7 +498,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:33
+dist/fetchers/proxyline.d.ts:34
 
 ___
 
@@ -493,7 +516,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:58
+dist/fetchers/proxyline.d.ts:59
 
 ___
 
@@ -512,7 +535,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxyline.d.ts:27
+dist/fetchers/proxyline.d.ts:28
 
 ___
 
@@ -554,15 +577,42 @@ ___
 
 dist/parser.d.ts:18
 
-## Variables
+___
 
-### fetchers
+### ThreadedMapOptions
 
-• `Const` **fetchers**: `Readonly`\<\{ `combine`: (`options`: [`CombinedFetcherOptions`](modules/internal_.md#combinedfetcheroptions)) => [`CombinedFetcher`](classes/internal_.CombinedFetcher.md) ; `custom`: \<T\>(`fetch`: [`CustomFetcherFetch`](modules.md#customfetcherfetch)\<`T`\>, `options?`: [`CustomFetcherOptions`](modules.md#customfetcheroptions)) => [`CustomFetcher`](classes/CustomFetcher.md)\<`T`\> ; `file`: (`options`: [`FileFetcherOptions`](modules.md#filefetcheroptions)) => [`FileFetcher`](classes/FileFetcher.md) ; `proxy6`: (`options`: [`Proxy6FetcherOptions`](modules.md#proxy6fetcheroptions)) => [`Proxy6Fetcher`](classes/Proxy6Fetcher.md) ; `proxyLine`: (`options`: [`ProxyLineFetcherOptions`](modules.md#proxylinefetcheroptions)) => [`ProxyLineFetcher`](classes/ProxyLineFetcher.md)  }\>
+Ƭ **ThreadedMapOptions**\<`A`, `B`\>: \{ `key?`: (`value`: `A`) => `unknown` ; `onError?`: (`error`: `unknown`, `input`: `A`) => `any` ; `onValue?`: (`value`: `B`, `input`: `A`) => `any`  } & [`ParallelMapOptions`](modules.md#parallelmapoptions)
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
 
 #### Defined in
 
-dist/fetchers/index.d.ts:6
+dist/parallel.d.ts:33
+
+## Variables
+
+### PARALLEL\_COUNT
+
+• `Const` **PARALLEL\_COUNT**: `number`
+
+#### Defined in
+
+dist/parallel.d.ts:2
+
+___
+
+### fetchers
+
+• `Const` **fetchers**: `Readonly`\<\{ `combine`: (`options`: [`CombinedFetcherOptions`](modules/internal_.md#combinedfetcheroptions)) => [`CombinedFetcher`](classes/internal_.CombinedFetcher.md) ; `custom`: \<T\>(`fetch`: [`CustomFetcherFetch`](modules.md#customfetcherfetch)\<`T`\>, `options?`: [`CustomFetcherOptions`](modules.md#customfetcheroptions)) => [`CustomFetcher`](classes/CustomFetcher.md)\<`T`\> ; `file`: (`options`: [`FileFetcherOptions`](modules.md#filefetcheroptions)) => [`FileFetcher`](classes/FileFetcher.md) ; `freeFromGithub`: (`options?`: [`CustomFetcherOptions`](modules.md#customfetcheroptions)) => [`CombinedFetcher`](classes/internal_.CombinedFetcher.md) ; `proxy6`: (`options`: [`Proxy6FetcherOptions`](modules.md#proxy6fetcheroptions)) => [`Proxy6Fetcher`](classes/Proxy6Fetcher.md) ; `proxyLine`: (`options`: [`ProxyLineFetcherOptions`](modules.md#proxylinefetcheroptions)) => [`ProxyLineFetcher`](classes/ProxyLineFetcher.md) ; `urls`: typeof [`urls`](modules/internal_.md#urls)  }\>
+
+#### Defined in
+
+dist/fetchers/index.d.ts:14
 
 ## Functions
 
@@ -739,6 +789,36 @@ dist/undici.d.ts:11
 
 ___
 
+### getMultiTryResult
+
+▸ **getMultiTryResult**\<`T`\>(`results`): `T`
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `results` | `PromiseSettledResult`\<`T`\>[] |
+
+#### Returns
+
+`T`
+
+{T}
+
+**`Export`**
+
+#### Defined in
+
+dist/parallel.d.ts:31
+
+___
+
 ### isHttp
 
 ▸ **isHttp**(`proxy`): proxy is HttpProxy
@@ -891,6 +971,37 @@ dist/parser.d.ts:81
 
 ___
 
+### parallelMap
+
+▸ **parallelMap**\<`A`, `B`\>(`data`, `map`, `options?`): `Promise`\<`PromiseSettledResult`\<`B`\>[]\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `Iterable`\<`A`\> |
+| `map` | (`value`: `A`) => `B` \| `PromiseLike`\<`B`\> |
+| `options?` | [`ParallelMapOptions`](modules.md#parallelmapoptions) |
+
+#### Returns
+
+`Promise`\<`PromiseSettledResult`\<`B`\>[]\>
+
+**`Export`**
+
+#### Defined in
+
+dist/parallel.d.ts:22
+
+___
+
 ### parse
 
 ▸ **parse**(`line`): [`Mutable`](modules.md#mutable)\<[`AnyProxyInfo`](modules.md#anyproxyinfo)\>
@@ -936,6 +1047,26 @@ dist/parser.d.ts:90
 
 ___
 
+### sleep
+
+▸ **sleep**(`ms`): `Promise`\<`unknown`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ms` | `number` |
+
+#### Returns
+
+`Promise`\<`unknown`\>
+
+#### Defined in
+
+dist/parallel.d.ts:32
+
+___
+
 ### stringifyToUrl
 
 ▸ **stringifyToUrl**(`proxy`): `string`
@@ -955,3 +1086,36 @@ URL
 #### Defined in
 
 dist/parser.d.ts:33
+
+___
+
+### threadedMap
+
+▸ **threadedMap**\<`A`, `B`\>(`input`, `map`, `options?`): `AsyncIterable`\<`B`\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `A` |
+| `B` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `input` | [`MaybeAsyncIterable`](modules/internal_.md#maybeasynciterable)\<`A`\> |
+| `map` | (`input`: `A`) => [`MaybePromiseLike`](modules/internal_.md#maybepromiselike)\<`B`\> |
+| `options?` | [`ThreadedMapOptions`](modules.md#threadedmapoptions)\<`A`, `B`\> |
+
+#### Returns
+
+`AsyncIterable`\<`B`\>
+
+{AsyncIterable<B>}
+
+**`Export`**
+
+#### Defined in
+
+dist/parallel.d.ts:49

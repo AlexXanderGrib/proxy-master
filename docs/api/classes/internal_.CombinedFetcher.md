@@ -155,7 +155,13 @@ ___
 
 ### get
 
-▸ **get**(): `Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `unknown`\>
+▸ **get**(`filter?`): `Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `unknown`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: `unknown`) => `boolean` |
 
 #### Returns
 
@@ -179,7 +185,13 @@ ___
 
 ### random
 
-▸ **random**(): `undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `unknown`]
+▸ **random**(`filter?`): `undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `unknown`]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: `unknown`) => `boolean` |
 
 #### Returns
 

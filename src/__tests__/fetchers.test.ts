@@ -53,34 +53,15 @@ describe("Fetchers", () => {
   });
 
   describe("Combine", () => {
-    const fetcher = fetchers.combine({
-      fetchers: [
-        fetchers.file({
-          path: "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/all/data.txt",
-          check: false
-        }),
-        fetchers.file({
-          path: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt",
-          defaultProxyType: "http",
-          check: false
-        }),
-        fetchers.file({
-          path: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt",
-          defaultProxyType: "socks4",
-          check: false
-        }),
-        fetchers.file({
-          path: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt",
-          defaultProxyType: "socks5",
-          check: false
-        })
-      ]
+    let total = 0;
+    const fetcher = fetchers.freeFromGithub({
+      checkTimeout: 1000,
+      filter: () => ++total < 100
     });
 
     test("should fetch proxies from github", async () => {
       const proxies = await fetcher.fetch();
-
       expect(proxies.size).toBeGreaterThan(0);
-    });
+    }, 10_000);
   });
 });

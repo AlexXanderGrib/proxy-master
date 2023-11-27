@@ -28,10 +28,8 @@
 
 - [$\_infoType](CustomFetcher.md#$_infotype)
 - [$\_proxyType](CustomFetcher.md#$_proxytype)
-- [\_autoCheck](CustomFetcher.md#_autocheck)
 - [\_customFetch](CustomFetcher.md#_customfetch)
-- [\_invalid](CustomFetcher.md#_invalid)
-- [\_valid](CustomFetcher.md#_valid)
+- [\_prefetch](CustomFetcher.md#_prefetch)
 - [events](CustomFetcher.md#events)
 - [options](CustomFetcher.md#options)
 
@@ -79,7 +77,7 @@ CustomFetcher
 
 #### Defined in
 
-dist/fetchers/custom.d.ts:45
+dist/fetchers/custom.d.ts:44
 
 ## Properties
 
@@ -111,11 +109,19 @@ dist/fetcher.d.ts:14
 
 ___
 
-### \_autoCheck
+### \_customFetch
 
-• `Private` **\_autoCheck**: `any`
+• `Private` `Readonly` **\_customFetch**: `any`
 
-**`Param`**
+#### Defined in
+
+dist/fetchers/custom.d.ts:36
+
+___
+
+### \_prefetch
+
+• `Private` **\_prefetch**: `any`
 
 **`Memberof`**
 
@@ -123,37 +129,7 @@ CustomFetcher
 
 #### Defined in
 
-dist/fetchers/custom.d.ts:54
-
-___
-
-### \_customFetch
-
-• `Private` `Readonly` **\_customFetch**: `any`
-
-#### Defined in
-
-dist/fetchers/custom.d.ts:37
-
-___
-
-### \_invalid
-
-• `Private` `Readonly` **\_invalid**: `any`
-
-#### Defined in
-
-dist/fetchers/custom.d.ts:35
-
-___
-
-### \_valid
-
-• `Private` `Readonly` **\_valid**: `any`
-
-#### Defined in
-
-dist/fetchers/custom.d.ts:36
+dist/fetchers/custom.d.ts:52
 
 ___
 
@@ -163,7 +139,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/custom.d.ts:38
+dist/fetchers/custom.d.ts:37
 
 ___
 
@@ -173,7 +149,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/custom.d.ts:34
+dist/fetchers/custom.d.ts:35
 
 ## Methods
 
@@ -197,7 +173,7 @@ CustomFetcher
 
 #### Defined in
 
-dist/fetchers/custom.d.ts:62
+dist/fetchers/custom.d.ts:60
 
 ___
 
@@ -227,7 +203,13 @@ ___
 
 ### get
 
-▸ **get**(): `Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `T`\>
+▸ **get**(`filter?`): `Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `T`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: `T`) => `boolean` |
 
 #### Returns
 
@@ -251,7 +233,13 @@ ___
 
 ### random
 
-▸ **random**(): `undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `T`]
+▸ **random**(`filter?`): `undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `T`]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: `T`) => `boolean` |
 
 #### Returns
 

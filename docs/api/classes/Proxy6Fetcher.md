@@ -61,7 +61,7 @@ Proxy6Fetcher
 
 #### Defined in
 
-dist/fetchers/proxy6.d.ts:61
+dist/fetchers/proxy6.d.ts:63
 
 ## Properties
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxy6.d.ts:55
+dist/fetchers/proxy6.d.ts:57
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-dist/fetchers/proxy6.d.ts:54
+dist/fetchers/proxy6.d.ts:56
 
 ## Methods
 
@@ -133,7 +133,7 @@ Proxy6Fetcher
 
 #### Defined in
 
-dist/fetchers/proxy6.d.ts:69
+dist/fetchers/proxy6.d.ts:71
 
 ___
 
@@ -163,7 +163,13 @@ ___
 
 ### get
 
-▸ **get**(): `Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`Proxy6Info`](../modules.md#proxy6info)\>
+▸ **get**(`filter?`): `Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`Proxy6Info`](../modules.md#proxy6info)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: [`Proxy6Info`](../modules.md#proxy6info)) => `boolean` |
 
 #### Returns
 
@@ -187,7 +193,13 @@ ___
 
 ### random
 
-▸ **random**(): `undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`Proxy6Info`](../modules.md#proxy6info)]
+▸ **random**(`filter?`): `undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`Proxy6Info`](../modules.md#proxy6info)]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: [`Proxy6Info`](../modules.md#proxy6info)) => `boolean` |
 
 #### Returns
 
@@ -271,7 +283,7 @@ Proxy6Fetcher
 
 #### Defined in
 
-dist/fetchers/proxy6.d.ts:78
+dist/fetchers/proxy6.d.ts:80
 
 ___
 

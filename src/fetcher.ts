@@ -1,4 +1,4 @@
-import { Mutable, AnyProxyInfo, ProxyInfo } from "./parser";
+import { Mutable, AnyProxyInfo, ProxyInfo, ProxyType } from "./parser";
 import { MaybeAsyncIterable, MaybePromiseLike } from "./types";
 
 /**
@@ -60,22 +60,34 @@ export abstract class ProxyFetcher<
 
   /**
    *
-   *
+   * @param {*} filter
    * @return {Map<K, T>}  {Map<K, T>}
    * @memberof ProxyFetcher
    */
-  get(): Map<K, T> {
-    return new Map(this._proxies);
+  get(filter?: ProxyType | ((proxy: K, info: T) => boolean)): Map<K, T> {
+    if (typeof filter === "string") {
+      return this.get((proxy) => proxy.type === filter);
+    }
+
+    let proxies = [...this._proxies];
+
+    if (filter) {
+      proxies = proxies.filter(([proxy, info]) => filter(proxy, info));
+    }
+
+    return new Map(proxies);
   }
 
   /**
    *
-   *
+   * @param {*} filter
    * @return {*}  {([K, T] | undefined)}
    * @memberof ProxyFetcher
    */
-  random(): [K, T] | undefined {
-    const list = [...this._proxies];
+  random(
+    filter?: ProxyType | ((proxy: K, info: T) => boolean)
+  ): [K, T] | undefined {
+    const list = [...this.get(filter)];
     return list[Math.floor(list.length)];
   }
 
