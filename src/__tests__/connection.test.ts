@@ -8,7 +8,7 @@ import { describe, expect, test } from "vitest";
 
 const IP_URL = "https://ifconfig.me/ip";
 
-describe("undici", () => {
+describe.sequential("undici", () => {
   test("should connect through https", async () => {
     const dispatcher = getDispatcher(validHttp);
 
@@ -28,7 +28,7 @@ describe("undici", () => {
   });
 });
 
-describe("axios", () => {
+describe.sequential("axios", () => {
   test("should connect through https", async () => {
     const { data } = await axios.get(IP_URL, getAgents(validHttp));
     expect(data).toBe(validHttp.host);
@@ -54,7 +54,7 @@ describe("axios", () => {
   });
 });
 
-describe("node-fetch", () => {
+describe.sequential("node-fetch", () => {
   test("should connect through https", async () => {
     const response = await nodeFetch(IP_URL, { agent: getAgent(validHttp) });
     const text = await response.text();
@@ -71,7 +71,7 @@ describe("node-fetch", () => {
 });
 
 if (typeof fetch !== "undefined") {
-  describe("node.js fetch", () => {
+  describe.sequential("node.js fetch", () => {
     test("should connect through https", async () => {
       const dispatcher = getDispatcher(validHttp);
 
