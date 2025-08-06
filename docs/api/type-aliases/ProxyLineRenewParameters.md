@@ -8,7 +8,7 @@
 
 > **ProxyLineRenewParameters** = `object`
 
-Defined in: [fetchers/proxyline.ts:89](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L89)
+Defined in: [fetchers/proxyline.ts:89](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L89)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [fetchers/proxyline.ts:89](https://github.com/AlexXanderGrib/proxy-m
 
 > `optional` **coupon**: `string`
 
-Defined in: [fetchers/proxyline.ts:92](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L92)
+Defined in: [fetchers/proxyline.ts:92](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L92)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [fetchers/proxyline.ts:92](https://github.com/AlexXanderGrib/proxy-m
 
 > **period**: [`ProxyLinePeriodDays`](ProxyLinePeriodDays.md)
 
-Defined in: [fetchers/proxyline.ts:91](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L91)
+Defined in: [fetchers/proxyline.ts:91](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L91)
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: [fetchers/proxyline.ts:91](https://github.com/AlexXanderGrib/proxy-m
 
 > **proxies**: `number`[]
 
-Defined in: [fetchers/proxyline.ts:90](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L90)
+Defined in: [fetchers/proxyline.ts:90](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L90)

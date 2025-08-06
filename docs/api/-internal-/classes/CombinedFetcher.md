@@ -6,7 +6,7 @@
 
 # Class: CombinedFetcher
 
-Defined in: [fetchers/combine.ts:25](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/combine.ts#L25)
+Defined in: [fetchers/combine.ts:25](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/combine.ts#L25)
 
 ## Export
 
@@ -24,7 +24,7 @@ CombinedFetcher
 
 > **new CombinedFetcher**(`options`): `CombinedFetcher`
 
-Defined in: [fetchers/combine.ts:31](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/combine.ts#L31)
+Defined in: [fetchers/combine.ts:31](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/combine.ts#L31)
 
 Creates an instance of CombinedFetcher.
 
@@ -52,7 +52,7 @@ CombinedFetcher
 
 > `readonly` **options**: [`CombinedFetcherOptions`](../type-aliases/CombinedFetcherOptions.md)
 
-Defined in: [fetchers/combine.ts:31](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/combine.ts#L31)
+Defined in: [fetchers/combine.ts:31](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/combine.ts#L31)
 
 ## Methods
 
@@ -60,7 +60,7 @@ Defined in: [fetchers/combine.ts:31](https://github.com/AlexXanderGrib/proxy-mas
 
 > `protected` **\_fetch**(): `Promise`\<`Map`\<[`Mutable`](../../type-aliases/Mutable.md)\<[`ProxyInfo`](../../type-aliases/ProxyInfo.md)\>, `unknown`\>\>
 
-Defined in: [fetchers/combine.ts:42](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/combine.ts#L42)
+Defined in: [fetchers/combine.ts:42](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/combine.ts#L42)
 
 #### Returns
 
@@ -82,7 +82,7 @@ CombinedFetcher
 
 > **fetch**(): `Promise`\<`Map`\<[`Mutable`](../../type-aliases/Mutable.md)\<[`ProxyInfo`](../../type-aliases/ProxyInfo.md)\>, `unknown`\>\>
 
-Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L27)
+Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L27)
 
 #### Returns
 
@@ -104,7 +104,7 @@ ProxyFetcher
 
 > **get**(`filter?`): `Map`\<[`Mutable`](../../type-aliases/Mutable.md)\<[`ProxyInfo`](../../type-aliases/ProxyInfo.md)\>, `unknown`\>
 
-Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L65)
+Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L65)
 
 #### Parameters
 
@@ -132,7 +132,7 @@ ProxyFetcher
 
 > **random**(`filter?`): `undefined` \| \[[`Mutable`](../../type-aliases/Mutable.md)\<[`ProxyInfo`](../../type-aliases/ProxyInfo.md)\>, `unknown`\]
 
-Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L85)
+Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L85)
 
 #### Parameters
 
@@ -160,7 +160,7 @@ ProxyFetcher
 
 > **refetchOnInterval**(`timeout`, `signal?`): () => `void`
 
-Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L47)
+Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L47)
 
 #### Parameters
 
@@ -194,7 +194,7 @@ ProxyFetcher
 
 > **toJSON**(): `object`
 
-Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L98)
+Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L98)
 
 #### Returns
 

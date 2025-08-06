@@ -8,7 +8,7 @@
 
 > `protected` **\_fetch**(): `AsyncIterable`\<\[[`Mutable`](../../type-aliases/Mutable.md)\<[`ProxyInfo`](../../type-aliases/ProxyInfo.md)\>, `T`\]\>
 
-Defined in: [fetchers/custom.ts:143](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L143)
+Defined in: [fetchers/custom.ts:143](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/custom.ts#L143)
 
 ## Returns
 

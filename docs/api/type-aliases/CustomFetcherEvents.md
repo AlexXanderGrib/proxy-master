@@ -8,7 +8,7 @@
 
 > **CustomFetcherEvents** = `object`
 
-Defined in: [fetchers/custom.ts:29](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L29)
+Defined in: [fetchers/custom.ts:29](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/custom.ts#L29)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [fetchers/custom.ts:29](https://github.com/AlexXanderGrib/proxy-mast
 
 > **checked:failed**: (`line`, `error`) => `void`
 
-Defined in: [fetchers/custom.ts:32](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L32)
+Defined in: [fetchers/custom.ts:32](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/custom.ts#L32)
 
 #### Parameters
 
@@ -38,7 +38,7 @@ Defined in: [fetchers/custom.ts:32](https://github.com/AlexXanderGrib/proxy-mast
 
 > **checked:failed:dedupe**: (`line`, `error`) => `void`
 
-Defined in: [fetchers/custom.ts:33](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L33)
+Defined in: [fetchers/custom.ts:33](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/custom.ts#L33)
 
 #### Parameters
 
@@ -60,7 +60,7 @@ Defined in: [fetchers/custom.ts:33](https://github.com/AlexXanderGrib/proxy-mast
 
 > **checked:valid**: (`proxy`, `line`) => `void`
 
-Defined in: [fetchers/custom.ts:30](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L30)
+Defined in: [fetchers/custom.ts:30](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/custom.ts#L30)
 
 #### Parameters
 
@@ -82,7 +82,7 @@ Defined in: [fetchers/custom.ts:30](https://github.com/AlexXanderGrib/proxy-mast
 
 > **checked:valid:dedupe**: (`proxy`, `line`) => `void`
 
-Defined in: [fetchers/custom.ts:31](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L31)
+Defined in: [fetchers/custom.ts:31](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/custom.ts#L31)
 
 #### Parameters
 
@@ -104,7 +104,7 @@ Defined in: [fetchers/custom.ts:31](https://github.com/AlexXanderGrib/proxy-mast
 
 > **fetch:failed**: (`error`) => `void`
 
-Defined in: [fetchers/custom.ts:34](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L34)
+Defined in: [fetchers/custom.ts:34](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/custom.ts#L34)
 
 #### Parameters
 

@@ -6,7 +6,7 @@
 
 # Class: ProxyLineFetcher
 
-Defined in: [fetchers/proxyline.ts:111](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L111)
+Defined in: [fetchers/proxyline.ts:111](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L111)
 
 ## Export
 
@@ -22,7 +22,7 @@ ProxyLineFetcher
 
 > **new ProxyLineFetcher**(`options`): `ProxyLineFetcher`
 
-Defined in: [fetchers/proxyline.ts:119](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L119)
+Defined in: [fetchers/proxyline.ts:119](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L119)
 
 Creates an instance of ProxyLineFetcher.
 
@@ -50,7 +50,7 @@ ProxyLineFetcher
 
 > `private` `readonly` **\_axios**: `Axios`
 
-Defined in: [fetchers/proxyline.ts:112](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L112)
+Defined in: [fetchers/proxyline.ts:112](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L112)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [fetchers/proxyline.ts:112](https://github.com/AlexXanderGrib/proxy-
 
 > `readonly` **options**: [`ProxyLineFetcherOptions`](../type-aliases/ProxyLineFetcherOptions.md)
 
-Defined in: [fetchers/proxyline.ts:119](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L119)
+Defined in: [fetchers/proxyline.ts:119](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L119)
 
 ## Methods
 
@@ -66,7 +66,7 @@ Defined in: [fetchers/proxyline.ts:119](https://github.com/AlexXanderGrib/proxy-
 
 > `protected` **\_fetch**(): `Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\>\>
 
-Defined in: [fetchers/proxyline.ts:148](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L148)
+Defined in: [fetchers/proxyline.ts:148](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L148)
 
 #### Returns
 
@@ -88,7 +88,7 @@ ProxyLineFetcher
 
 > **fetch**(): `Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\>\>
 
-Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L27)
+Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L27)
 
 #### Returns
 
@@ -110,7 +110,7 @@ ProxyFetcher
 
 > **get**(`filter?`): `Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\>
 
-Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L65)
+Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L65)
 
 #### Parameters
 
@@ -138,7 +138,7 @@ ProxyFetcher
 
 > **getBalance**(): `Promise`\<[`ProxyLineGetBalanceResult`](../type-aliases/ProxyLineGetBalanceResult.md)\>
 
-Defined in: [fetchers/proxyline.ts:203](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L203)
+Defined in: [fetchers/proxyline.ts:203](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L203)
 
 #### Returns
 
@@ -154,7 +154,7 @@ ProxyLineFetcher
 
 > **order**(`parameters`): `Promise`\<`void`\>
 
-Defined in: [fetchers/proxyline.ts:228](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L228)
+Defined in: [fetchers/proxyline.ts:228](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L228)
 
 #### Parameters
 
@@ -176,7 +176,7 @@ ProxyLineFetcher
 
 > **random**(`filter?`): `undefined` \| \[[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\]
 
-Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L85)
+Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L85)
 
 #### Parameters
 
@@ -204,7 +204,7 @@ ProxyFetcher
 
 > **refetchOnInterval**(`timeout`, `signal?`): () => `void`
 
-Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L47)
+Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L47)
 
 #### Parameters
 
@@ -238,7 +238,7 @@ ProxyFetcher
 
 > **renew**(`parameters`): `Promise`\<`void`\>
 
-Defined in: [fetchers/proxyline.ts:216](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L216)
+Defined in: [fetchers/proxyline.ts:216](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L216)
 
 #### Parameters
 
@@ -262,7 +262,7 @@ ProxyLineFetcher
 
 > **toJSON**(): `object`
 
-Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L98)
+Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L98)
 
 #### Returns
 

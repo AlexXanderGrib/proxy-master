@@ -8,7 +8,7 @@
 
 > **AnyProxyInfo** = `object`
 
-Defined in: [parser.ts:6](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/parser.ts#L6)
+Defined in: [parser.ts:6](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/parser.ts#L6)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [parser.ts:6](https://github.com/AlexXanderGrib/proxy-master/blob/ca
 
 > `readonly` **host**: `string`
 
-Defined in: [parser.ts:8](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/parser.ts#L8)
+Defined in: [parser.ts:8](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/parser.ts#L8)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [parser.ts:8](https://github.com/AlexXanderGrib/proxy-master/blob/ca
 
 > `readonly` `optional` **password**: `string`
 
-Defined in: [parser.ts:11](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/parser.ts#L11)
+Defined in: [parser.ts:11](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/parser.ts#L11)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [parser.ts:11](https://github.com/AlexXanderGrib/proxy-master/blob/c
 
 > `readonly` **port**: `number`
 
-Defined in: [parser.ts:9](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/parser.ts#L9)
+Defined in: [parser.ts:9](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/parser.ts#L9)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [parser.ts:9](https://github.com/AlexXanderGrib/proxy-master/blob/ca
 
 > `readonly` `optional` **type**: [`ProxyType`](ProxyType.md)
 
-Defined in: [parser.ts:7](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/parser.ts#L7)
+Defined in: [parser.ts:7](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/parser.ts#L7)
 
 ***
 
@@ -48,4 +48,4 @@ Defined in: [parser.ts:7](https://github.com/AlexXanderGrib/proxy-master/blob/ca
 
 > `readonly` `optional` **username**: `string`
 
-Defined in: [parser.ts:10](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/parser.ts#L10)
+Defined in: [parser.ts:10](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/parser.ts#L10)

@@ -6,7 +6,7 @@
 
 # Class: ProxyPair
 
-Defined in: [pair.ts:20](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L20)
+Defined in: [pair.ts:20](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L20)
 
 ## Export
 
@@ -22,7 +22,7 @@ ProxyPair
 
 > **new ProxyPair**(`http`, `socks`, `primaryType`): `ProxyPair`
 
-Defined in: [pair.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L27)
+Defined in: [pair.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L27)
 
 Creates an instance of ProxyPair.
 
@@ -54,7 +54,7 @@ ProxyPair
 
 > `private` **\_browserProxy**: `undefined` \| [`HttpLikeProxy`](../type-aliases/HttpLikeProxy.md)
 
-Defined in: [pair.ts:96](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L96)
+Defined in: [pair.ts:96](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L96)
 
 ***
 
@@ -62,7 +62,7 @@ Defined in: [pair.ts:96](https://github.com/AlexXanderGrib/proxy-master/blob/ca5
 
 > `private` **\_browserUrl**: `undefined` \| `string`
 
-Defined in: [pair.ts:97](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L97)
+Defined in: [pair.ts:97](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L97)
 
 ***
 
@@ -70,7 +70,7 @@ Defined in: [pair.ts:97](https://github.com/AlexXanderGrib/proxy-master/blob/ca5
 
 > `private` **\_httpAgent**: `undefined` \| `Agent`
 
-Defined in: [pair.ts:100](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L100)
+Defined in: [pair.ts:100](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L100)
 
 ***
 
@@ -78,7 +78,7 @@ Defined in: [pair.ts:100](https://github.com/AlexXanderGrib/proxy-master/blob/ca
 
 > `private` **\_socksAgent**: `undefined` \| `Agent`
 
-Defined in: [pair.ts:99](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L99)
+Defined in: [pair.ts:99](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L99)
 
 ***
 
@@ -86,7 +86,7 @@ Defined in: [pair.ts:99](https://github.com/AlexXanderGrib/proxy-master/blob/ca5
 
 > `readonly` **http**: [`HttpLikeProxy`](../type-aliases/HttpLikeProxy.md)
 
-Defined in: [pair.ts:28](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L28)
+Defined in: [pair.ts:28](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L28)
 
 ***
 
@@ -94,7 +94,7 @@ Defined in: [pair.ts:28](https://github.com/AlexXanderGrib/proxy-master/blob/ca5
 
 > `readonly` **primaryType**: `"http"` \| `"socks"` = `"http"`
 
-Defined in: [pair.ts:30](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L30)
+Defined in: [pair.ts:30](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L30)
 
 ***
 
@@ -102,7 +102,7 @@ Defined in: [pair.ts:30](https://github.com/AlexXanderGrib/proxy-master/blob/ca5
 
 > `readonly` **socks**: [`SocksProxy`](../type-aliases/SocksProxy.md)
 
-Defined in: [pair.ts:29](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L29)
+Defined in: [pair.ts:29](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L29)
 
 ## Accessors
 
@@ -112,7 +112,7 @@ Defined in: [pair.ts:29](https://github.com/AlexXanderGrib/proxy-master/blob/ca5
 
 > **get** `private` **\_primaryAgent**(): `undefined` \| `Agent`
 
-Defined in: [pair.ts:109](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L109)
+Defined in: [pair.ts:109](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L109)
 
 ##### Memberof
 
@@ -130,7 +130,7 @@ ProxyPair
 
 > **get** **host**(): `string`
 
-Defined in: [pair.ts:50](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L50)
+Defined in: [pair.ts:50](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L50)
 
 ##### Memberof
 
@@ -152,7 +152,7 @@ ProxyPair
 
 > **get** **password**(): `undefined` \| `string`
 
-Defined in: [pair.ts:81](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L81)
+Defined in: [pair.ts:81](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L81)
 
 ##### Memberof
 
@@ -174,7 +174,7 @@ ProxyPair
 
 > **get** **port**(): `number`
 
-Defined in: [pair.ts:60](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L60)
+Defined in: [pair.ts:60](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L60)
 
 ##### Memberof
 
@@ -196,7 +196,7 @@ ProxyPair
 
 > **get** **primary**(): [`ProxyInfo`](../type-aliases/ProxyInfo.md)
 
-Defined in: [pair.ts:92](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L92)
+Defined in: [pair.ts:92](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L92)
 
 ##### Memberof
 
@@ -214,7 +214,7 @@ ProxyPair
 
 > **get** **type**(): [`ProxyType`](../type-aliases/ProxyType.md)
 
-Defined in: [pair.ts:40](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L40)
+Defined in: [pair.ts:40](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L40)
 
 ##### Memberof
 
@@ -236,7 +236,7 @@ ProxyPair
 
 > **get** **username**(): `undefined` \| `string`
 
-Defined in: [pair.ts:70](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L70)
+Defined in: [pair.ts:70](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L70)
 
 ##### Memberof
 
@@ -256,7 +256,7 @@ ProxyPair
 
 > **closeBrowserUrl**(): `Promise`\<`void`\>
 
-Defined in: [pair.ts:215](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L215)
+Defined in: [pair.ts:215](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L215)
 
 #### Returns
 
@@ -272,7 +272,7 @@ ProxyPair
 
 > **createAgent**(): `Agent`
 
-Defined in: [pair.ts:119](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L119)
+Defined in: [pair.ts:119](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L119)
 
 #### Returns
 
@@ -290,7 +290,7 @@ ProxyPair
 
 > **createHttpAgent**(): `Agent`
 
-Defined in: [pair.ts:161](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L161)
+Defined in: [pair.ts:161](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L161)
 
 #### Returns
 
@@ -308,7 +308,7 @@ ProxyPair
 
 > **createSocksAgent**(): `Agent`
 
-Defined in: [pair.ts:174](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L174)
+Defined in: [pair.ts:174](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L174)
 
 #### Returns
 
@@ -326,7 +326,7 @@ ProxyPair
 
 > **createSocksSocket**(`host`, `port`): `Promise`\<`Socket`\>
 
-Defined in: [pair.ts:189](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L189)
+Defined in: [pair.ts:189](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L189)
 
 #### Parameters
 
@@ -354,7 +354,7 @@ ProxyPair
 
 > **getAgent**(): `Agent`
 
-Defined in: [pair.ts:131](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L131)
+Defined in: [pair.ts:131](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L131)
 
 #### Returns
 
@@ -372,7 +372,7 @@ ProxyPair
 
 > **getBrowserUrl**(): `Promise`\<`string`\>
 
-Defined in: [pair.ts:199](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L199)
+Defined in: [pair.ts:199](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L199)
 
 #### Returns
 
@@ -388,7 +388,7 @@ ProxyPair
 
 > **getHttpAgent**(): `Agent`
 
-Defined in: [pair.ts:141](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L141)
+Defined in: [pair.ts:141](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L141)
 
 #### Returns
 
@@ -406,7 +406,7 @@ ProxyPair
 
 > **getSocksAgent**(): `Agent`
 
-Defined in: [pair.ts:151](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L151)
+Defined in: [pair.ts:151](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/pair.ts#L151)
 
 #### Returns
 

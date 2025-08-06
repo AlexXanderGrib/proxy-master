@@ -6,7 +6,7 @@
 
 # Abstract Class: ProxyFetcher\<T, K\>
 
-Defined in: [fetcher.ts:12](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L12)
+Defined in: [fetcher.ts:12](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L12)
 
 ## Export
 
@@ -45,7 +45,7 @@ ProxyFetcher
 
 > `private` **\_proxies**: `Map`\<`K`, `T`\>
 
-Defined in: [fetcher.ts:16](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L16)
+Defined in: [fetcher.ts:16](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L16)
 
 ## Methods
 
@@ -53,7 +53,7 @@ Defined in: [fetcher.ts:16](https://github.com/AlexXanderGrib/proxy-master/blob/
 
 > `abstract` `protected` **\_fetch**(): [`MaybePromiseLike`](../-internal-/type-aliases/MaybePromiseLike.md)\<[`MaybeAsyncIterable`](../-internal-/type-aliases/MaybeAsyncIterable.md)\<\[`K`, `T`\]\>\>
 
-Defined in: [fetcher.ts:17](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L17)
+Defined in: [fetcher.ts:17](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L17)
 
 #### Returns
 
@@ -65,7 +65,7 @@ Defined in: [fetcher.ts:17](https://github.com/AlexXanderGrib/proxy-master/blob/
 
 > **fetch**(): `Promise`\<`Map`\<`K`, `T`\>\>
 
-Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L27)
+Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L27)
 
 #### Returns
 
@@ -83,7 +83,7 @@ ProxyFetcher
 
 > **get**(`filter?`): `Map`\<`K`, `T`\>
 
-Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L65)
+Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L65)
 
 #### Parameters
 
@@ -107,7 +107,7 @@ ProxyFetcher
 
 > **random**(`filter?`): `undefined` \| \[`K`, `T`\]
 
-Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L85)
+Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L85)
 
 #### Parameters
 
@@ -131,7 +131,7 @@ ProxyFetcher
 
 > **refetchOnInterval**(`timeout`, `signal?`): () => `void`
 
-Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L47)
+Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L47)
 
 #### Parameters
 
@@ -161,7 +161,7 @@ ProxyFetcher
 
 > **toJSON**(): `object`
 
-Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L98)
+Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L98)
 
 #### Returns
 

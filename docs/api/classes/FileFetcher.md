@@ -6,7 +6,7 @@
 
 # Class: FileFetcher
 
-Defined in: [fetchers/file.ts:49](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/file.ts#L49)
+Defined in: [fetchers/file.ts:49](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/file.ts#L49)
 
 ## Export
 
@@ -22,7 +22,7 @@ FileFetcher
 
 > **new FileFetcher**(`options`): `FileFetcher`
 
-Defined in: [fetchers/file.ts:55](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/file.ts#L55)
+Defined in: [fetchers/file.ts:55](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/file.ts#L55)
 
 Creates an instance of FileFetcher.
 
@@ -50,7 +50,7 @@ FileFetcher
 
 > `readonly` **events**: `EventEmitter`\<[`CustomFetcherEvents`](../type-aliases/CustomFetcherEvents.md), `any`\>
 
-Defined in: [fetchers/custom.ts:80](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L80)
+Defined in: [fetchers/custom.ts:80](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/custom.ts#L80)
 
 #### Inherited from
 
@@ -62,7 +62,7 @@ Defined in: [fetchers/custom.ts:80](https://github.com/AlexXanderGrib/proxy-mast
 
 > `readonly` **options**: [`FileFetcherOptions`](../type-aliases/FileFetcherOptions.md)
 
-Defined in: [fetchers/file.ts:55](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/file.ts#L55)
+Defined in: [fetchers/file.ts:55](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/file.ts#L55)
 
 #### Inherited from
 
@@ -74,7 +74,7 @@ Defined in: [fetchers/file.ts:55](https://github.com/AlexXanderGrib/proxy-master
 
 > `protected` **\_fetch**(): `AsyncIterable`\<\[[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\]\>
 
-Defined in: [fetchers/custom.ts:143](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L143)
+Defined in: [fetchers/custom.ts:143](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/custom.ts#L143)
 
 #### Returns
 
@@ -96,7 +96,7 @@ CustomFetcher
 
 > `private` **\_getFile**(`path`): `Promise`\<`string`\>
 
-Defined in: [fetchers/file.ts:94](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/file.ts#L94)
+Defined in: [fetchers/file.ts:94](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/file.ts#L94)
 
 #### Parameters
 
@@ -120,7 +120,7 @@ FileFetcher
 
 > **fetch**(): `Promise`\<`Map`\<[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\>\>
 
-Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L27)
+Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L27)
 
 #### Returns
 
@@ -142,7 +142,7 @@ ProxyFetcher
 
 > **get**(`filter?`): `Map`\<[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\>
 
-Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L65)
+Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L65)
 
 #### Parameters
 
@@ -170,7 +170,7 @@ ProxyFetcher
 
 > **random**(`filter?`): `undefined` \| \[[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\]
 
-Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L85)
+Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L85)
 
 #### Parameters
 
@@ -198,7 +198,7 @@ ProxyFetcher
 
 > **refetchOnInterval**(`timeout`, `signal?`): () => `void`
 
-Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L47)
+Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L47)
 
 #### Parameters
 
@@ -232,7 +232,7 @@ ProxyFetcher
 
 > **toJSON**(): `object`
 
-Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L98)
+Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L98)
 
 #### Returns
 

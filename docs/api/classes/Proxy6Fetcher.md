@@ -6,7 +6,7 @@
 
 # Class: Proxy6Fetcher
 
-Defined in: [fetchers/proxy6.ts:64](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L64)
+Defined in: [fetchers/proxy6.ts:64](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L64)
 
 ## Export
 
@@ -22,7 +22,7 @@ Proxy6Fetcher
 
 > **new Proxy6Fetcher**(`options`): `Proxy6Fetcher`
 
-Defined in: [fetchers/proxy6.ts:72](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L72)
+Defined in: [fetchers/proxy6.ts:72](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L72)
 
 Creates an instance of Proxy6Fetcher.
 
@@ -50,7 +50,7 @@ Proxy6Fetcher
 
 > `private` `readonly` **\_axios**: `Axios`
 
-Defined in: [fetchers/proxy6.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L65)
+Defined in: [fetchers/proxy6.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L65)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [fetchers/proxy6.ts:65](https://github.com/AlexXanderGrib/proxy-mast
 
 > `readonly` **options**: [`Proxy6FetcherOptions`](../type-aliases/Proxy6FetcherOptions.md)
 
-Defined in: [fetchers/proxy6.ts:72](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L72)
+Defined in: [fetchers/proxy6.ts:72](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L72)
 
 ## Methods
 
@@ -66,7 +66,7 @@ Defined in: [fetchers/proxy6.ts:72](https://github.com/AlexXanderGrib/proxy-mast
 
 > `protected` **\_fetch**(): `Promise`\<`Map`\<[`ProxyInfo`](../type-aliases/ProxyInfo.md), [`Proxy6Info`](../type-aliases/Proxy6Info.md)\>\>
 
-Defined in: [fetchers/proxy6.ts:90](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L90)
+Defined in: [fetchers/proxy6.ts:90](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L90)
 
 #### Returns
 
@@ -88,7 +88,7 @@ Proxy6Fetcher
 
 > **fetch**(): `Promise`\<`Map`\<[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`Proxy6Info`](../type-aliases/Proxy6Info.md)\>\>
 
-Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L27)
+Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L27)
 
 #### Returns
 
@@ -110,7 +110,7 @@ ProxyFetcher
 
 > **get**(`filter?`): `Map`\<[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`Proxy6Info`](../type-aliases/Proxy6Info.md)\>
 
-Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L65)
+Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L65)
 
 #### Parameters
 
@@ -138,7 +138,7 @@ ProxyFetcher
 
 > **random**(`filter?`): `undefined` \| \[[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`Proxy6Info`](../type-aliases/Proxy6Info.md)\]
 
-Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L85)
+Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L85)
 
 #### Parameters
 
@@ -166,7 +166,7 @@ ProxyFetcher
 
 > **refetchOnInterval**(`timeout`, `signal?`): () => `void`
 
-Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L47)
+Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L47)
 
 #### Parameters
 
@@ -200,7 +200,7 @@ ProxyFetcher
 
 > **setType**(`type`, `ids`): `Promise`\<`void`\>
 
-Defined in: [fetchers/proxy6.ts:132](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L132)
+Defined in: [fetchers/proxy6.ts:132](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L132)
 
 #### Parameters
 
@@ -228,7 +228,7 @@ Proxy6Fetcher
 
 > **toJSON**(): `object`
 
-Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L98)
+Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetcher.ts#L98)
 
 #### Returns
 

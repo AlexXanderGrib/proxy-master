@@ -8,7 +8,7 @@
 
 > **ParallelMapOptions** = `object`
 
-Defined in: [parallel.ts:6](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/parallel.ts#L6)
+Defined in: [parallel.ts:6](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/parallel.ts#L6)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [parallel.ts:6](https://github.com/AlexXanderGrib/proxy-master/blob/
 
 > `optional` **parallel**: `number` \| `boolean`
 
-Defined in: [parallel.ts:12](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/parallel.ts#L12)
+Defined in: [parallel.ts:12](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/parallel.ts#L12)
 
 - `true` or undefined - automatically parallelize based on cpu count
 - `false` or 1, 0 - do not parallelize. Execute map sequentially

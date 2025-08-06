@@ -8,7 +8,7 @@
 
 > **Proxy6Proxy** = `object`
 
-Defined in: [fetchers/proxy6.ts:39](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L39)
+Defined in: [fetchers/proxy6.ts:39](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L39)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [fetchers/proxy6.ts:39](https://github.com/AlexXanderGrib/proxy-mast
 
 > **active**: `string`
 
-Defined in: [fetchers/proxy6.ts:54](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L54)
+Defined in: [fetchers/proxy6.ts:54](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L54)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [fetchers/proxy6.ts:54](https://github.com/AlexXanderGrib/proxy-mast
 
 > **country**: `string`
 
-Defined in: [fetchers/proxy6.ts:48](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L48)
+Defined in: [fetchers/proxy6.ts:48](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L48)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [fetchers/proxy6.ts:48](https://github.com/AlexXanderGrib/proxy-mast
 
 > **date**: `string`
 
-Defined in: [fetchers/proxy6.ts:49](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L49)
+Defined in: [fetchers/proxy6.ts:49](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L49)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [fetchers/proxy6.ts:49](https://github.com/AlexXanderGrib/proxy-mast
 
 > **date\_end**: `string`
 
-Defined in: [fetchers/proxy6.ts:50](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L50)
+Defined in: [fetchers/proxy6.ts:50](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L50)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [fetchers/proxy6.ts:50](https://github.com/AlexXanderGrib/proxy-mast
 
 > **descr**: `string`
 
-Defined in: [fetchers/proxy6.ts:53](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L53)
+Defined in: [fetchers/proxy6.ts:53](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L53)
 
 ***
 
@@ -56,7 +56,7 @@ Defined in: [fetchers/proxy6.ts:53](https://github.com/AlexXanderGrib/proxy-mast
 
 > **host**: `string`
 
-Defined in: [fetchers/proxy6.ts:43](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L43)
+Defined in: [fetchers/proxy6.ts:43](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L43)
 
 ***
 
@@ -64,7 +64,7 @@ Defined in: [fetchers/proxy6.ts:43](https://github.com/AlexXanderGrib/proxy-mast
 
 > **id**: `string`
 
-Defined in: [fetchers/proxy6.ts:40](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L40)
+Defined in: [fetchers/proxy6.ts:40](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L40)
 
 ***
 
@@ -72,7 +72,7 @@ Defined in: [fetchers/proxy6.ts:40](https://github.com/AlexXanderGrib/proxy-mast
 
 > **ip**: `string`
 
-Defined in: [fetchers/proxy6.ts:42](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L42)
+Defined in: [fetchers/proxy6.ts:42](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L42)
 
 ***
 
@@ -80,7 +80,7 @@ Defined in: [fetchers/proxy6.ts:42](https://github.com/AlexXanderGrib/proxy-mast
 
 > **pass**: `string`
 
-Defined in: [fetchers/proxy6.ts:46](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L46)
+Defined in: [fetchers/proxy6.ts:46](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L46)
 
 ***
 
@@ -88,7 +88,7 @@ Defined in: [fetchers/proxy6.ts:46](https://github.com/AlexXanderGrib/proxy-mast
 
 > **port**: `string`
 
-Defined in: [fetchers/proxy6.ts:44](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L44)
+Defined in: [fetchers/proxy6.ts:44](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L44)
 
 ***
 
@@ -96,7 +96,7 @@ Defined in: [fetchers/proxy6.ts:44](https://github.com/AlexXanderGrib/proxy-mast
 
 > **type**: `"socks"` \| `"http"`
 
-Defined in: [fetchers/proxy6.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L47)
+Defined in: [fetchers/proxy6.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L47)
 
 ***
 
@@ -104,7 +104,7 @@ Defined in: [fetchers/proxy6.ts:47](https://github.com/AlexXanderGrib/proxy-mast
 
 > **unixtime**: `number`
 
-Defined in: [fetchers/proxy6.ts:51](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L51)
+Defined in: [fetchers/proxy6.ts:51](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L51)
 
 ***
 
@@ -112,7 +112,7 @@ Defined in: [fetchers/proxy6.ts:51](https://github.com/AlexXanderGrib/proxy-mast
 
 > **unixtime\_end**: `number`
 
-Defined in: [fetchers/proxy6.ts:52](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L52)
+Defined in: [fetchers/proxy6.ts:52](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L52)
 
 ***
 
@@ -120,7 +120,7 @@ Defined in: [fetchers/proxy6.ts:52](https://github.com/AlexXanderGrib/proxy-mast
 
 > **user**: `string`
 
-Defined in: [fetchers/proxy6.ts:45](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L45)
+Defined in: [fetchers/proxy6.ts:45](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L45)
 
 ***
 
@@ -128,4 +128,4 @@ Defined in: [fetchers/proxy6.ts:45](https://github.com/AlexXanderGrib/proxy-mast
 
 > **version**: `string`
 
-Defined in: [fetchers/proxy6.ts:41](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxy6.ts#L41)
+Defined in: [fetchers/proxy6.ts:41](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxy6.ts#L41)

@@ -8,7 +8,7 @@
 
 > **ProxyLineInfo** = `object`
 
-Defined in: [fetchers/proxyline.ts:29](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L29)
+Defined in: [fetchers/proxyline.ts:29](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L29)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [fetchers/proxyline.ts:29](https://github.com/AlexXanderGrib/proxy-m
 
 > **country**: `string`
 
-Defined in: [fetchers/proxyline.ts:35](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L35)
+Defined in: [fetchers/proxyline.ts:35](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L35)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [fetchers/proxyline.ts:35](https://github.com/AlexXanderGrib/proxy-m
 
 > **expiryDate**: `Date`
 
-Defined in: [fetchers/proxyline.ts:33](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L33)
+Defined in: [fetchers/proxyline.ts:33](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L33)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [fetchers/proxyline.ts:33](https://github.com/AlexXanderGrib/proxy-m
 
 > **id**: `number`
 
-Defined in: [fetchers/proxyline.ts:30](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L30)
+Defined in: [fetchers/proxyline.ts:30](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L30)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [fetchers/proxyline.ts:30](https://github.com/AlexXanderGrib/proxy-m
 
 > **orderId**: `number`
 
-Defined in: [fetchers/proxyline.ts:31](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L31)
+Defined in: [fetchers/proxyline.ts:31](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L31)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [fetchers/proxyline.ts:31](https://github.com/AlexXanderGrib/proxy-m
 
 > **purchaseDate**: `Date`
 
-Defined in: [fetchers/proxyline.ts:32](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L32)
+Defined in: [fetchers/proxyline.ts:32](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L32)
 
 ***
 
@@ -56,4 +56,4 @@ Defined in: [fetchers/proxyline.ts:32](https://github.com/AlexXanderGrib/proxy-m
 
 > **tags**: `string`[]
 
-Defined in: [fetchers/proxyline.ts:34](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L34)
+Defined in: [fetchers/proxyline.ts:34](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L34)

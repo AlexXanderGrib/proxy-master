@@ -8,7 +8,7 @@
 
 > **ProxyLineResponse** = `object`
 
-Defined in: [fetchers/proxyline.ts:38](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L38)
+Defined in: [fetchers/proxyline.ts:38](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L38)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [fetchers/proxyline.ts:38](https://github.com/AlexXanderGrib/proxy-m
 
 > **count**: `number`
 
-Defined in: [fetchers/proxyline.ts:39](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L39)
+Defined in: [fetchers/proxyline.ts:39](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L39)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [fetchers/proxyline.ts:39](https://github.com/AlexXanderGrib/proxy-m
 
 > **next**: `number`
 
-Defined in: [fetchers/proxyline.ts:40](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L40)
+Defined in: [fetchers/proxyline.ts:40](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L40)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [fetchers/proxyline.ts:40](https://github.com/AlexXanderGrib/proxy-m
 
 > **previous**: `number`
 
-Defined in: [fetchers/proxyline.ts:41](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L41)
+Defined in: [fetchers/proxyline.ts:41](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L41)
 
 ***
 
@@ -40,4 +40,4 @@ Defined in: [fetchers/proxyline.ts:41](https://github.com/AlexXanderGrib/proxy-m
 
 > **results**: [`ProxyLineProxy`](ProxyLineProxy.md)[]
 
-Defined in: [fetchers/proxyline.ts:42](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L42)
+Defined in: [fetchers/proxyline.ts:42](https://github.com/AlexXanderGrib/proxy-master/blob/d9889b922817ac03c7a235b832a590a4ef34fb55/src/fetchers/proxyline.ts#L42)
