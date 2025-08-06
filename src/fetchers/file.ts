@@ -1,15 +1,16 @@
 import { readFile } from "fs/promises";
-import { ProxyInfo } from "../parser";
+import { type ProxyInfo } from "../parser";
 import type { PathLike } from "fs";
 import axios from "axios";
 import { getAgents } from "../agent";
-import { CustomFetcher, CustomFetcherOptions } from "./custom";
+import { CustomFetcher, type CustomFetcherOptions } from "./custom";
 import { parallelMap } from "../parallel";
 
 export type FileFetcherOptions = Omit<CustomFetcherOptions, "fetch"> & {
   path: PathLike | PathLike[];
   proxy?: ProxyInfo;
   fileEncoding?: BufferEncoding;
+  allowAllErrorsList?: boolean;
 };
 
 export type FileInfo = {
@@ -67,7 +68,7 @@ export class FileFetcher extends CustomFetcher<FileInfo> {
         .filter((r): r is PromiseRejectedResult => r.status === "rejected")
         .map((r) => r.reason);
 
-      if (contents.length === 0) {
+      if (contents.length === 0 && !options.allowAllErrorsList) {
         throw new AggregateError(errors, "No contents fetched");
       }
 

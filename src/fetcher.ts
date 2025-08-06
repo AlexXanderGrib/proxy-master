@@ -1,5 +1,5 @@
-import { Mutable, AnyProxyInfo, ProxyInfo, ProxyType } from "./parser";
-import { MaybeAsyncIterable, MaybePromiseLike } from "./types";
+import { type Mutable, type AnyProxyInfo, type ProxyInfo, type ProxyType } from "./parser";
+import { type MaybeAsyncIterable, type MaybePromiseLike } from "./types";
 
 /**
  *
@@ -13,8 +13,6 @@ export abstract class ProxyFetcher<
   T,
   K extends AnyProxyInfo = Mutable<ProxyInfo>
 > {
-  protected $_infoType!: T;
-  protected $_proxyType!: K;
   private _proxies = new Map<K, T>();
   protected abstract _fetch(): MaybePromiseLike<
     MaybeAsyncIterable<[proxy: K, info: T]>
@@ -88,7 +86,7 @@ export abstract class ProxyFetcher<
     filter?: ProxyType | ((proxy: K, info: T) => boolean)
   ): [K, T] | undefined {
     const list = [...this.get(filter)];
-    return list[Math.floor(list.length)];
+    return list[Math.floor(Math.random() * list.length)];
   }
 
   /**

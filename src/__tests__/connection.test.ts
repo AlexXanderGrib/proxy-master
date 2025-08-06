@@ -4,6 +4,7 @@ import { validHttp, validSocks } from "./proxies";
 import { getAgent, getAgents } from "../agent";
 import axios from "axios";
 import nodeFetch from "node-fetch";
+import { describe, expect, test } from "vitest";
 
 const IP_URL = "https://ifconfig.me/ip";
 

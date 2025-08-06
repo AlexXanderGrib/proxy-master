@@ -1,5 +1,5 @@
-import { cpus } from "node:os";
-import { MaybeAsyncIterable, MaybePromiseLike } from "./types";
+import { cpus } from "os";
+import type { MaybeAsyncIterable, MaybePromiseLike } from "./types";
 
 export const PARALLEL_COUNT = Math.max(cpus().length - 1, 2);
 
@@ -154,7 +154,7 @@ export async function* threadedMap<A, B>(
   threads.push(read());
 
   while (!inputEnded || queue.length > 0) {
-    const slice = results.splice(0, results.length);
+    const slice = results.splice(0);
 
     if (slice.length === 0) {
       await sleep(10);

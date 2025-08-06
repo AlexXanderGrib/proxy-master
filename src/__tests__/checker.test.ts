@@ -1,3 +1,5 @@
+import { describe, test, expect } from "vitest";
+
 import { check } from "../checker";
 import { validHttp, validSocks, validUnknownSocks, invalid } from "./proxies";
 
@@ -25,30 +27,19 @@ describe("Proxy checker", () => {
   });
 
   test("Valid unknown (no heuristics)", async () => {
-    try {
-      await check(validUnknownSocks, { allowHeuristics: false });
-      fail("Expected to fail with error");
-    } catch (error) {
-      expect(error).toBeInstanceOf(Error);
-      expect(String(error)).toContain("allowHeuristics");
-    }
+    const promise = check(validUnknownSocks, { allowHeuristics: false });
+    await expect(promise).rejects.toThrowErrorMatchingInlineSnapshot(
+      `[Error: Proxy type is not defined. You can enable guessing by setting allowHeuristics to true]`
+    );
   });
 
   test("Invalid", async () => {
-    try {
-      await check(invalid, { parallel: false, timeout: 200 });
-      fail("Expected to fail with error");
-    } catch {
-      // expected to fail
-    }
+    const promise = check(invalid, { parallel: false, timeout: 200 });
+    await expect(promise).rejects.toThrowError();
   });
 
   test("Invalid (sequential check)", async () => {
-    try {
-      await check(invalid, { parallel: false, timeout: 200 });
-      fail("Expected to fail with error");
-    } catch {
-      // expected to fail
-    }
+    const promise = check(invalid, { parallel: false, timeout: 200 });
+    await expect(promise).rejects.toThrowError();
   });
 });

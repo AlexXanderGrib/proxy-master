@@ -1,310 +1,255 @@
-[Package](../README.md) / [Exports](../modules.md) / FileFetcher
+[**Package**](../README.md)
+
+***
+
+[Package](../globals.md) / FileFetcher
 
 # Class: FileFetcher
 
-**`Export`**
+Defined in: [fetchers/file.ts:49](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/file.ts#L49)
 
-## Hierarchy
+## Export
 
-- [`CustomFetcher`](CustomFetcher.md)\<[`FileInfo`](../modules.md#fileinfo)\>
+FileFetcher
 
-  ↳ **`FileFetcher`**
+## Extends
 
-## Table of contents
-
-### Constructors
-
-- [constructor](FileFetcher.md#constructor)
-
-### Properties
-
-- [$\_infoType](FileFetcher.md#$_infotype)
-- [$\_proxyType](FileFetcher.md#$_proxytype)
-- [\_getFile](FileFetcher.md#_getfile)
-- [events](FileFetcher.md#events)
-- [options](FileFetcher.md#options)
-
-### Methods
-
-- [\_fetch](FileFetcher.md#_fetch)
-- [fetch](FileFetcher.md#fetch)
-- [get](FileFetcher.md#get)
-- [random](FileFetcher.md#random)
-- [refetchOnInterval](FileFetcher.md#refetchoninterval)
-- [toJSON](FileFetcher.md#tojson)
+- [`CustomFetcher`](CustomFetcher.md)\<[`FileInfo`](../type-aliases/FileInfo.md)\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new FileFetcher**(`options`): [`FileFetcher`](FileFetcher.md)
+> **new FileFetcher**(`options`): `FileFetcher`
+
+Defined in: [fetchers/file.ts:55](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/file.ts#L55)
 
 Creates an instance of FileFetcher.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options` | [`FileFetcherOptions`](../modules.md#filefetcheroptions) |
+##### options
+
+[`FileFetcherOptions`](../type-aliases/FileFetcherOptions.md)
 
 #### Returns
 
-[`FileFetcher`](FileFetcher.md)
+`FileFetcher`
 
-**`Memberof`**
+#### Memberof
 
 FileFetcher
 
 #### Overrides
 
-[CustomFetcher](CustomFetcher.md).[constructor](CustomFetcher.md#constructor)
-
-#### Defined in
-
-dist/fetchers/file.d.ts:28
+[`CustomFetcher`](CustomFetcher.md).[`constructor`](CustomFetcher.md#constructor)
 
 ## Properties
 
-### $\_infoType
-
-• `Protected` **$\_infoType**: [`FileInfo`](../modules.md#fileinfo)
-
-#### Inherited from
-
-[CustomFetcher](CustomFetcher.md).[$_infoType](CustomFetcher.md#$_infotype)
-
-#### Defined in
-
-dist/fetcher.d.ts:13
-
-___
-
-### $\_proxyType
-
-• `Protected` **$\_proxyType**: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>
-
-#### Inherited from
-
-[CustomFetcher](CustomFetcher.md).[$_proxyType](CustomFetcher.md#$_proxytype)
-
-#### Defined in
-
-dist/fetcher.d.ts:14
-
-___
-
-### \_getFile
-
-• `Private` **\_getFile**: `any`
-
-**`Param`**
-
-**`Memberof`**
-
-FileFetcher
-
-#### Defined in
-
-dist/fetchers/file.d.ts:36
-
-___
-
 ### events
 
-• `Readonly` **events**: `EventEmitter`\<[`CustomFetcherEvents`](../modules.md#customfetcherevents), `any`\>
+> `readonly` **events**: `EventEmitter`\<[`CustomFetcherEvents`](../type-aliases/CustomFetcherEvents.md), `any`\>
+
+Defined in: [fetchers/custom.ts:80](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L80)
 
 #### Inherited from
 
-[CustomFetcher](CustomFetcher.md).[events](CustomFetcher.md#events)
+[`CustomFetcher`](CustomFetcher.md).[`events`](CustomFetcher.md#events)
 
-#### Defined in
-
-dist/fetchers/custom.d.ts:37
-
-___
+***
 
 ### options
 
-• `Readonly` **options**: [`FileFetcherOptions`](../modules.md#filefetcheroptions)
+> `readonly` **options**: [`FileFetcherOptions`](../type-aliases/FileFetcherOptions.md)
 
-#### Overrides
+Defined in: [fetchers/file.ts:55](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/file.ts#L55)
 
-[CustomFetcher](CustomFetcher.md).[options](CustomFetcher.md#options)
+#### Inherited from
 
-#### Defined in
-
-dist/fetchers/file.d.ts:22
+[`CustomFetcher`](CustomFetcher.md).[`options`](CustomFetcher.md#options)
 
 ## Methods
 
-### \_fetch
+### \_fetch()
 
-▸ **_fetch**(): `AsyncIterable`\<[[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)]\>
+> `protected` **\_fetch**(): `AsyncIterable`\<\[[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\]\>
+
+Defined in: [fetchers/custom.ts:143](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/custom.ts#L143)
 
 #### Returns
 
-`AsyncIterable`\<[[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)]\>
+`AsyncIterable`\<\[[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\]\>
 
 {Promise<Map<Mutable<ProxyInfo>, T>>}
 
-**`Memberof`**
+#### Memberof
 
 CustomFetcher
 
 #### Inherited from
 
-[CustomFetcher](CustomFetcher.md).[_fetch](CustomFetcher.md#_fetch)
+[`<internal>`](../-internal-/README.md).[`_fetch`](../-internal-/functions/fetch-1.md)
 
-#### Defined in
+***
 
-dist/fetchers/custom.d.ts:60
+### \_getFile()
 
-___
+> `private` **\_getFile**(`path`): `Promise`\<`string`\>
 
-### fetch
+Defined in: [fetchers/file.ts:94](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/file.ts#L94)
 
-▸ **fetch**(): `Promise`\<`Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)\>\>
+#### Parameters
+
+##### path
+
+`PathLike`
 
 #### Returns
 
-`Promise`\<`Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)\>\>
+`Promise`\<`string`\>
+
+{Promise<string>}
+
+#### Memberof
+
+FileFetcher
+
+***
+
+### fetch()
+
+> **fetch**(): `Promise`\<`Map`\<[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\>\>
+
+Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L27)
+
+#### Returns
+
+`Promise`\<`Map`\<[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\>\>
 
 {Promise<Map<K, T>>}
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[CustomFetcher](CustomFetcher.md).[fetch](CustomFetcher.md#fetch)
+[`<internal>`](../-internal-/README.md).[`fetch`](../-internal-/functions/fetch-2.md)
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:23
+### get()
 
-___
+> **get**(`filter?`): `Map`\<[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\>
 
-### get
-
-▸ **get**(`filter?`): `Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)\>
+Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L65)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: [`FileInfo`](../modules.md#fileinfo)) => `boolean` |
+##### filter?
+
+[`ProxyType`](../type-aliases/ProxyType.md) | (`proxy`, `info`) => `boolean`
 
 #### Returns
 
-`Map`\<[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)\>
+`Map`\<[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\>
 
 {Map<K, T>}
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[CustomFetcher](CustomFetcher.md).[get](CustomFetcher.md#get)
+[`<internal>`](../-internal-/README.md).[`get`](../-internal-/functions/get.md)
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:39
+### random()
 
-___
+> **random**(`filter?`): `undefined` \| \[[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\]
 
-### random
-
-▸ **random**(`filter?`): `undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)]
+Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L85)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, `info`: [`FileInfo`](../modules.md#fileinfo)) => `boolean` |
+##### filter?
+
+[`ProxyType`](../type-aliases/ProxyType.md) | (`proxy`, `info`) => `boolean`
 
 #### Returns
 
-`undefined` \| [[`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>, [`FileInfo`](../modules.md#fileinfo)]
+`undefined` \| \[[`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>, [`FileInfo`](../type-aliases/FileInfo.md)\]
 
 {([K, T] | undefined)}
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[CustomFetcher](CustomFetcher.md).[random](CustomFetcher.md#random)
+[`<internal>`](../-internal-/README.md).[`random`](../-internal-/functions/random.md)
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:46
+### refetchOnInterval()
 
-___
+> **refetchOnInterval**(`timeout`, `signal?`): () => `void`
 
-### refetchOnInterval
-
-▸ **refetchOnInterval**(`timeout`, `signal?`): () => `void`
+Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L47)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `timeout` | `number` |
-| `signal?` | `AbortSignal` |
+##### timeout
+
+`number`
+
+##### signal?
+
+`AbortSignal`
 
 #### Returns
 
-`fn`
-
-▸ (): `void`
+> (): `void`
 
 ##### Returns
 
 `void`
 
-**`Memberof`**
-
-ProxyFetcher
-
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[CustomFetcher](CustomFetcher.md).[refetchOnInterval](CustomFetcher.md#refetchoninterval)
+[`<internal>`](../-internal-/README.md).[`refetchOnInterval`](../-internal-/functions/refetchOnInterval.md)
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:32
+### toJSON()
 
-___
+> **toJSON**(): `object`
 
-### toJSON
-
-▸ **toJSON**(): `Object`
+Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L98)
 
 #### Returns
 
-`Object`
+`object`
 
-| Name | Type |
-| :------ | :------ |
-| `proxies` | \{ `info`: [`FileInfo`](../modules.md#fileinfo) ; `proxy`: [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\>  }[] |
-| `type` | `string` |
+##### proxies
 
-**`Memberof`**
+> **proxies**: `object`[]
+
+##### type
+
+> **type**: `string`
+
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[CustomFetcher](CustomFetcher.md).[toJSON](CustomFetcher.md#tojson)
-
-#### Defined in
-
-dist/fetcher.d.ts:53
+[`<internal>`](../-internal-/README.md).[`toJSON`](../-internal-/functions/toJSON.md)

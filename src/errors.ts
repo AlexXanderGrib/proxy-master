@@ -1,4 +1,4 @@
-import { AnyProxyInfo } from "./parser";
+import { type AnyProxyInfo } from "./parser";
 
 /**
  *

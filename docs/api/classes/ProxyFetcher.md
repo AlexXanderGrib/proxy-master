@@ -1,117 +1,71 @@
-[Package](../README.md) / [Exports](../modules.md) / ProxyFetcher
+[**Package**](../README.md)
 
-# Class: ProxyFetcher\<T, K\>
+***
 
-**`Export`**
+[Package](../globals.md) / ProxyFetcher
 
-**`Abstract`**
+# Abstract Class: ProxyFetcher\<T, K\>
 
-## Type parameters
+Defined in: [fetcher.ts:12](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L12)
 
-| Name | Type |
-| :------ | :------ |
-| `T` | `T` |
-| `K` | extends [`AnyProxyInfo`](../modules.md#anyproxyinfo) = [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\> |
+## Export
 
-## Hierarchy
+ProxyFetcher
 
-- **`ProxyFetcher`**
+## Extended by
 
-  ↳ [`Proxy6Fetcher`](Proxy6Fetcher.md)
+- [`Proxy6Fetcher`](Proxy6Fetcher.md)
+- [`ProxyLineFetcher`](ProxyLineFetcher.md)
+- [`CustomFetcher`](CustomFetcher.md)
+- [`CombinedFetcher`](../-internal-/classes/CombinedFetcher.md)
 
-  ↳ [`ProxyLineFetcher`](ProxyLineFetcher.md)
+## Type Parameters
 
-  ↳ [`CustomFetcher`](CustomFetcher.md)
+### T
 
-  ↳ [`CombinedFetcher`](internal_.CombinedFetcher.md)
+`T`
 
-## Table of contents
+### K
 
-### Constructors
-
-- [constructor](ProxyFetcher.md#constructor)
-
-### Properties
-
-- [$\_infoType](ProxyFetcher.md#$_infotype)
-- [$\_proxyType](ProxyFetcher.md#$_proxytype)
-- [\_proxies](ProxyFetcher.md#_proxies)
-
-### Methods
-
-- [\_fetch](ProxyFetcher.md#_fetch)
-- [fetch](ProxyFetcher.md#fetch)
-- [get](ProxyFetcher.md#get)
-- [random](ProxyFetcher.md#random)
-- [refetchOnInterval](ProxyFetcher.md#refetchoninterval)
-- [toJSON](ProxyFetcher.md#tojson)
+`K` *extends* [`AnyProxyInfo`](../type-aliases/AnyProxyInfo.md) = [`Mutable`](../type-aliases/Mutable.md)\<[`ProxyInfo`](../type-aliases/ProxyInfo.md)\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new ProxyFetcher**\<`T`, `K`\>(): [`ProxyFetcher`](ProxyFetcher.md)\<`T`, `K`\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | `T` |
-| `K` | extends [`AnyProxyInfo`](../modules.md#anyproxyinfo) = [`Mutable`](../modules.md#mutable)\<[`ProxyInfo`](../modules.md#proxyinfo)\> |
+> **new ProxyFetcher**\<`T`, `K`\>(): `ProxyFetcher`\<`T`, `K`\>
 
 #### Returns
 
-[`ProxyFetcher`](ProxyFetcher.md)\<`T`, `K`\>
+`ProxyFetcher`\<`T`, `K`\>
 
 ## Properties
 
-### $\_infoType
-
-• `Protected` **$\_infoType**: `T`
-
-#### Defined in
-
-dist/fetcher.d.ts:13
-
-___
-
-### $\_proxyType
-
-• `Protected` **$\_proxyType**: `K`
-
-#### Defined in
-
-dist/fetcher.d.ts:14
-
-___
-
 ### \_proxies
 
-• `Private` **\_proxies**: `any`
+> `private` **\_proxies**: `Map`\<`K`, `T`\>
 
-#### Defined in
-
-dist/fetcher.d.ts:15
+Defined in: [fetcher.ts:16](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L16)
 
 ## Methods
 
-### \_fetch
+### \_fetch()
 
-▸ **_fetch**(): [`MaybePromiseLike`](../modules/internal_.md#maybepromiselike)\<[`MaybeAsyncIterable`](../modules/internal_.md#maybeasynciterable)\<[proxy: K, info: T]\>\>
+> `abstract` `protected` **\_fetch**(): [`MaybePromiseLike`](../-internal-/type-aliases/MaybePromiseLike.md)\<[`MaybeAsyncIterable`](../-internal-/type-aliases/MaybeAsyncIterable.md)\<\[`K`, `T`\]\>\>
+
+Defined in: [fetcher.ts:17](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L17)
 
 #### Returns
 
-[`MaybePromiseLike`](../modules/internal_.md#maybepromiselike)\<[`MaybeAsyncIterable`](../modules/internal_.md#maybeasynciterable)\<[proxy: K, info: T]\>\>
+[`MaybePromiseLike`](../-internal-/type-aliases/MaybePromiseLike.md)\<[`MaybeAsyncIterable`](../-internal-/type-aliases/MaybeAsyncIterable.md)\<\[`K`, `T`\]\>\>
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:16
+### fetch()
 
-___
+> **fetch**(): `Promise`\<`Map`\<`K`, `T`\>\>
 
-### fetch
-
-▸ **fetch**(): `Promise`\<`Map`\<`K`, `T`\>\>
+Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L27)
 
 #### Returns
 
@@ -119,25 +73,23 @@ ___
 
 {Promise<Map<K, T>>}
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:23
+### get()
 
-___
+> **get**(`filter?`): `Map`\<`K`, `T`\>
 
-### get
-
-▸ **get**(`filter?`): `Map`\<`K`, `T`\>
+Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L65)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: `K`, `info`: `T`) => `boolean` |
+##### filter?
+
+[`ProxyType`](../type-aliases/ProxyType.md) | (`proxy`, `info`) => `boolean`
 
 #### Returns
 
@@ -145,94 +97,84 @@ ___
 
 {Map<K, T>}
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:39
+### random()
 
-___
+> **random**(`filter?`): `undefined` \| \[`K`, `T`\]
 
-### random
-
-▸ **random**(`filter?`): `undefined` \| [`K`, `T`]
+Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L85)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: `K`, `info`: `T`) => `boolean` |
+##### filter?
+
+[`ProxyType`](../type-aliases/ProxyType.md) | (`proxy`, `info`) => `boolean`
 
 #### Returns
 
-`undefined` \| [`K`, `T`]
+`undefined` \| \[`K`, `T`\]
 
 {([K, T] | undefined)}
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:46
+### refetchOnInterval()
 
-___
+> **refetchOnInterval**(`timeout`, `signal?`): () => `void`
 
-### refetchOnInterval
-
-▸ **refetchOnInterval**(`timeout`, `signal?`): () => `void`
+Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L47)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `timeout` | `number` |
-| `signal?` | `AbortSignal` |
+##### timeout
+
+`number`
+
+##### signal?
+
+`AbortSignal`
 
 #### Returns
 
-`fn`
-
-▸ (): `void`
+> (): `void`
 
 ##### Returns
 
 `void`
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
-**`Memberof`**
+***
 
-ProxyFetcher
+### toJSON()
 
-#### Defined in
+> **toJSON**(): `object`
 
-dist/fetcher.d.ts:32
-
-___
-
-### toJSON
-
-▸ **toJSON**(): `Object`
+Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L98)
 
 #### Returns
 
-`Object`
+`object`
 
-| Name | Type |
-| :------ | :------ |
-| `proxies` | \{ `info`: `T` ; `proxy`: `K`  }[] |
-| `type` | `string` |
+##### proxies
 
-**`Memberof`**
+> **proxies**: `object`[]
+
+##### type
+
+> **type**: `string`
+
+#### Memberof
 
 ProxyFetcher
-
-#### Defined in
-
-dist/fetcher.d.ts:53

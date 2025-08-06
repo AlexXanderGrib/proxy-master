@@ -25,7 +25,6 @@
     "moduleResolution": "node",
     "types": [
       "node",
-      "jest"
     ],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -35,7 +34,9 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "stripInternal": true,
+    "verbatimModuleSyntax": true
   },
+  "include": ["src"],
   "exclude": [
     "./dist",
     "./examples",

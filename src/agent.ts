@@ -1,4 +1,4 @@
-import { ProxyInfo, stringifyToUrl } from "./parser";
+import { type ProxyInfo, stringifyToUrl } from "./parser";
 import { ProxyTypeRequiredError } from "./errors";
 
 import type { Agent } from "https";

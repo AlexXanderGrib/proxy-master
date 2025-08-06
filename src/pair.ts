@@ -1,15 +1,15 @@
-import { Agent } from "https";
+import { type Agent } from "https";
 import { anonymizeProxy, closeAnonymizedProxy } from "./anonymize";
 import {
-  HttpLikeProxy,
-  ProxyType,
-  SocksProxy,
-  ProxyInfo,
+  type HttpLikeProxy,
+  type ProxyType,
+  type SocksProxy,
+  type ProxyInfo,
   stringifyToUrl
 } from "./parser";
 import { getAgent } from "./agent";
 import { createSocksSocket } from "./socks";
-import { Socket } from "net";
+import { type Socket } from "net";
 
 /**
  *

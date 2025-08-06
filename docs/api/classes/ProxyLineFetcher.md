@@ -1,318 +1,250 @@
-[Package](../README.md) / [Exports](../modules.md) / ProxyLineFetcher
+[**Package**](../README.md)
+
+***
+
+[Package](../globals.md) / ProxyLineFetcher
 
 # Class: ProxyLineFetcher
 
-**`Export`**
+Defined in: [fetchers/proxyline.ts:111](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L111)
 
-## Hierarchy
+## Export
 
-- [`ProxyFetcher`](ProxyFetcher.md)\<[`ProxyLineInfo`](../modules.md#proxylineinfo), [`ProxyPair`](ProxyPair.md)\>
+ProxyLineFetcher
 
-  ↳ **`ProxyLineFetcher`**
+## Extends
 
-## Table of contents
-
-### Constructors
-
-- [constructor](ProxyLineFetcher.md#constructor)
-
-### Properties
-
-- [$\_infoType](ProxyLineFetcher.md#$_infotype)
-- [$\_proxyType](ProxyLineFetcher.md#$_proxytype)
-- [\_axios](ProxyLineFetcher.md#_axios)
-- [options](ProxyLineFetcher.md#options)
-
-### Methods
-
-- [\_fetch](ProxyLineFetcher.md#_fetch)
-- [fetch](ProxyLineFetcher.md#fetch)
-- [get](ProxyLineFetcher.md#get)
-- [getBalance](ProxyLineFetcher.md#getbalance)
-- [order](ProxyLineFetcher.md#order)
-- [random](ProxyLineFetcher.md#random)
-- [refetchOnInterval](ProxyLineFetcher.md#refetchoninterval)
-- [renew](ProxyLineFetcher.md#renew)
-- [toJSON](ProxyLineFetcher.md#tojson)
+- [`ProxyFetcher`](ProxyFetcher.md)\<[`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md), [`ProxyPair`](ProxyPair.md)\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new ProxyLineFetcher**(`options`): [`ProxyLineFetcher`](ProxyLineFetcher.md)
+> **new ProxyLineFetcher**(`options`): `ProxyLineFetcher`
+
+Defined in: [fetchers/proxyline.ts:119](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L119)
 
 Creates an instance of ProxyLineFetcher.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options` | [`ProxyLineFetcherOptions`](../modules.md#proxylinefetcheroptions) |
+##### options
+
+[`ProxyLineFetcherOptions`](../type-aliases/ProxyLineFetcherOptions.md)
 
 #### Returns
 
-[`ProxyLineFetcher`](ProxyLineFetcher.md)
+`ProxyLineFetcher`
 
-**`Memberof`**
+#### Memberof
 
 ProxyLineFetcher
 
 #### Overrides
 
-[ProxyFetcher](ProxyFetcher.md).[constructor](ProxyFetcher.md#constructor)
-
-#### Defined in
-
-dist/fetchers/proxyline.d.ts:87
+[`ProxyFetcher`](ProxyFetcher.md).[`constructor`](ProxyFetcher.md#constructor)
 
 ## Properties
 
-### $\_infoType
-
-• `Protected` **$\_infoType**: [`ProxyLineInfo`](../modules.md#proxylineinfo)
-
-#### Inherited from
-
-[ProxyFetcher](ProxyFetcher.md).[$_infoType](ProxyFetcher.md#$_infotype)
-
-#### Defined in
-
-dist/fetcher.d.ts:13
-
-___
-
-### $\_proxyType
-
-• `Protected` **$\_proxyType**: [`ProxyPair`](ProxyPair.md)
-
-#### Inherited from
-
-[ProxyFetcher](ProxyFetcher.md).[$_proxyType](ProxyFetcher.md#$_proxytype)
-
-#### Defined in
-
-dist/fetcher.d.ts:14
-
-___
-
 ### \_axios
 
-• `Private` `Readonly` **\_axios**: `any`
+> `private` `readonly` **\_axios**: `Axios`
 
-#### Defined in
+Defined in: [fetchers/proxyline.ts:112](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L112)
 
-dist/fetchers/proxyline.d.ts:81
-
-___
+***
 
 ### options
 
-• `Readonly` **options**: [`ProxyLineFetcherOptions`](../modules.md#proxylinefetcheroptions)
+> `readonly` **options**: [`ProxyLineFetcherOptions`](../type-aliases/ProxyLineFetcherOptions.md)
 
-#### Defined in
-
-dist/fetchers/proxyline.d.ts:80
+Defined in: [fetchers/proxyline.ts:119](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L119)
 
 ## Methods
 
-### \_fetch
+### \_fetch()
 
-▸ **_fetch**(): `Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)\>\>
+> `protected` **\_fetch**(): `Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\>\>
+
+Defined in: [fetchers/proxyline.ts:148](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L148)
 
 #### Returns
 
-`Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)\>\>
+`Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\>\>
 
 {Promise<Map<ProxyPair, ProxyLineInfo>>}
 
-**`Memberof`**
+#### Memberof
 
 ProxyLineFetcher
 
 #### Overrides
 
-[ProxyFetcher](ProxyFetcher.md).[_fetch](ProxyFetcher.md#_fetch)
+[`<internal>`](../-internal-/README.md).[`_fetch`](../-internal-/functions/fetch.md)
 
-#### Defined in
+***
 
-dist/fetchers/proxyline.d.ts:95
+### fetch()
 
-___
+> **fetch**(): `Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\>\>
 
-### fetch
-
-▸ **fetch**(): `Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)\>\>
+Defined in: [fetcher.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L27)
 
 #### Returns
 
-`Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)\>\>
+`Promise`\<`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\>\>
 
 {Promise<Map<K, T>>}
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[fetch](ProxyFetcher.md#fetch)
+[`<internal>`](../-internal-/README.md).[`fetch`](../-internal-/functions/fetch-2.md)
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:23
+### get()
 
-___
+> **get**(`filter?`): `Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\>
 
-### get
-
-▸ **get**(`filter?`): `Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)\>
+Defined in: [fetcher.ts:65](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L65)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`ProxyPair`](ProxyPair.md), `info`: [`ProxyLineInfo`](../modules.md#proxylineinfo)) => `boolean` |
+##### filter?
+
+[`ProxyType`](../type-aliases/ProxyType.md) | (`proxy`, `info`) => `boolean`
 
 #### Returns
 
-`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)\>
+`Map`\<[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\>
 
 {Map<K, T>}
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[get](ProxyFetcher.md#get)
+[`<internal>`](../-internal-/README.md).[`get`](../-internal-/functions/get.md)
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:39
+### getBalance()
 
-___
+> **getBalance**(): `Promise`\<[`ProxyLineGetBalanceResult`](../type-aliases/ProxyLineGetBalanceResult.md)\>
 
-### getBalance
-
-▸ **getBalance**(): `Promise`\<[`ProxyLineGetBalanceResult`](../modules.md#proxylinegetbalanceresult)\>
+Defined in: [fetchers/proxyline.ts:203](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L203)
 
 #### Returns
 
-`Promise`\<[`ProxyLineGetBalanceResult`](../modules.md#proxylinegetbalanceresult)\>
+`Promise`\<[`ProxyLineGetBalanceResult`](../type-aliases/ProxyLineGetBalanceResult.md)\>
 
-**`Memberof`**
+#### Memberof
 
 ProxyLineFetcher
 
-#### Defined in
+***
 
-dist/fetchers/proxyline.d.ts:102
+### order()
 
-___
+> **order**(`parameters`): `Promise`\<`void`\>
 
-### order
-
-▸ **order**(`parameters`): `Promise`\<`void`\>
+Defined in: [fetchers/proxyline.ts:228](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L228)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `parameters` | [`ProxyLineOrderParameters`](../modules.md#proxylineorderparameters) |
+##### parameters
+
+[`ProxyLineOrderParameters`](../type-aliases/ProxyLineOrderParameters.md)
 
 #### Returns
 
 `Promise`\<`void`\>
 
-**`Memberof`**
+#### Memberof
 
 ProxyLineFetcher
 
-#### Defined in
+***
 
-dist/fetchers/proxyline.d.ts:118
+### random()
 
-___
+> **random**(`filter?`): `undefined` \| \[[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\]
 
-### random
-
-▸ **random**(`filter?`): `undefined` \| [[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)]
+Defined in: [fetcher.ts:85](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L85)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `filter?` | [`ProxyType`](../modules.md#proxytype) \| (`proxy`: [`ProxyPair`](ProxyPair.md), `info`: [`ProxyLineInfo`](../modules.md#proxylineinfo)) => `boolean` |
+##### filter?
+
+[`ProxyType`](../type-aliases/ProxyType.md) | (`proxy`, `info`) => `boolean`
 
 #### Returns
 
-`undefined` \| [[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../modules.md#proxylineinfo)]
+`undefined` \| \[[`ProxyPair`](ProxyPair.md), [`ProxyLineInfo`](../type-aliases/ProxyLineInfo.md)\]
 
 {([K, T] | undefined)}
 
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[random](ProxyFetcher.md#random)
+[`<internal>`](../-internal-/README.md).[`random`](../-internal-/functions/random.md)
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:46
+### refetchOnInterval()
 
-___
+> **refetchOnInterval**(`timeout`, `signal?`): () => `void`
 
-### refetchOnInterval
-
-▸ **refetchOnInterval**(`timeout`, `signal?`): () => `void`
+Defined in: [fetcher.ts:47](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L47)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `timeout` | `number` |
-| `signal?` | `AbortSignal` |
+##### timeout
+
+`number`
+
+##### signal?
+
+`AbortSignal`
 
 #### Returns
 
-`fn`
-
-▸ (): `void`
+> (): `void`
 
 ##### Returns
 
 `void`
 
-**`Memberof`**
-
-ProxyFetcher
-
-**`Memberof`**
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[refetchOnInterval](ProxyFetcher.md#refetchoninterval)
+[`<internal>`](../-internal-/README.md).[`refetchOnInterval`](../-internal-/functions/refetchOnInterval.md)
 
-#### Defined in
+***
 
-dist/fetcher.d.ts:32
+### renew()
 
-___
+> **renew**(`parameters`): `Promise`\<`void`\>
 
-### renew
-
-▸ **renew**(`parameters`): `Promise`\<`void`\>
+Defined in: [fetchers/proxyline.ts:216](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetchers/proxyline.ts#L216)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `parameters` | [`ProxyLineRenewParameters`](../modules.md#proxylinerenewparameters) |
+##### parameters
+
+[`ProxyLineRenewParameters`](../type-aliases/ProxyLineRenewParameters.md)
 
 #### Returns
 
@@ -320,37 +252,34 @@ ___
 
 {Promise<void>}
 
-**`Memberof`**
+#### Memberof
 
 ProxyLineFetcher
 
-#### Defined in
+***
 
-dist/fetchers/proxyline.d.ts:110
+### toJSON()
 
-___
+> **toJSON**(): `object`
 
-### toJSON
-
-▸ **toJSON**(): `Object`
+Defined in: [fetcher.ts:98](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/fetcher.ts#L98)
 
 #### Returns
 
-`Object`
+`object`
 
-| Name | Type |
-| :------ | :------ |
-| `proxies` | \{ `info`: [`ProxyLineInfo`](../modules.md#proxylineinfo) ; `proxy`: [`ProxyPair`](ProxyPair.md)  }[] |
-| `type` | `string` |
+##### proxies
 
-**`Memberof`**
+> **proxies**: `object`[]
+
+##### type
+
+> **type**: `string`
+
+#### Memberof
 
 ProxyFetcher
 
 #### Inherited from
 
-[ProxyFetcher](ProxyFetcher.md).[toJSON](ProxyFetcher.md#tojson)
-
-#### Defined in
-
-dist/fetcher.d.ts:53
+[`<internal>`](../-internal-/README.md).[`toJSON`](../-internal-/functions/toJSON.md)

@@ -1,4 +1,5 @@
-import { AnyProxyInfo, parse, stringifyToUrl } from "../parser";
+import { describe, test, expect } from "vitest";
+import { type AnyProxyInfo, parse, stringifyToUrl } from "../parser";
 
 describe("Proxy parser", () => {
   const toParse: Record<string, AnyProxyInfo> = {

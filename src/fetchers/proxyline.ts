@@ -1,8 +1,8 @@
-import axios, { Axios } from "axios";
+import axios, { type Axios } from "axios";
 import { ProxyFetcher } from "../fetcher";
 import { ProxyPair } from "../pair";
 import queryString from "query-string";
-import { Agent } from "node:https";
+import { type Agent } from "https";
 
 export type ProxyLineFetcherOptions = {
   apiKey: string;

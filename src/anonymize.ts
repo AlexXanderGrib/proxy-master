@@ -1,5 +1,5 @@
 import chains from "proxy-chain";
-import { HttpLikeProxy, isHttp, parse, stringifyToUrl } from "./parser";
+import { type HttpLikeProxy, isHttp, parse, stringifyToUrl } from "./parser";
 
 /**
  *

@@ -1,13 +1,13 @@
 import { ProxyFetcher } from "../fetcher";
-import { CombinedFetcherOptions, CombinedFetcher } from "./combine";
+import { type CombinedFetcherOptions, CombinedFetcher } from "./combine";
 import {
   CustomFetcher,
-  CustomFetcherFetch,
-  CustomFetcherOptions
+  type CustomFetcherFetch,
+  type CustomFetcherOptions
 } from "./custom";
-import { FileFetcher, FileFetcherOptions } from "./file";
-import { Proxy6Fetcher, Proxy6FetcherOptions } from "./proxy6";
-import { ProxyLineFetcher, ProxyLineFetcherOptions } from "./proxyline";
+import { FileFetcher, type FileFetcherOptions } from "./file";
+import { Proxy6Fetcher, type Proxy6FetcherOptions } from "./proxy6";
+import { ProxyLineFetcher, type ProxyLineFetcherOptions } from "./proxyline";
 
 /**
  *

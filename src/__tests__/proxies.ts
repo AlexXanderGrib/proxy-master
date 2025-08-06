@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import "dotenv/config";
-import { AnyProxyInfo, parse, parseRequireType } from "../parser";
+import { type AnyProxyInfo, parse, parseRequireType } from "../parser";
 
 export const validHttp = parseRequireType(
   process.env.VALID_HTTP_PROXY!,

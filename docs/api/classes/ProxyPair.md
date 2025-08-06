@@ -1,318 +1,278 @@
-[Package](../README.md) / [Exports](../modules.md) / ProxyPair
+[**Package**](../README.md)
+
+***
+
+[Package](../globals.md) / ProxyPair
 
 # Class: ProxyPair
 
-**`Export`**
+Defined in: [pair.ts:20](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L20)
+
+## Export
+
+ProxyPair
 
 ## Implements
 
-- [`ProxyInfo`](../modules.md#proxyinfo)
-
-## Table of contents
-
-### Constructors
-
-- [constructor](ProxyPair.md#constructor)
-
-### Properties
-
-- [\_browserProxy](ProxyPair.md#_browserproxy)
-- [\_browserUrl](ProxyPair.md#_browserurl)
-- [\_httpAgent](ProxyPair.md#_httpagent)
-- [\_socksAgent](ProxyPair.md#_socksagent)
-- [http](ProxyPair.md#http)
-- [primaryType](ProxyPair.md#primarytype)
-- [socks](ProxyPair.md#socks)
-
-### Accessors
-
-- [\_primaryAgent](ProxyPair.md#_primaryagent)
-- [host](ProxyPair.md#host)
-- [password](ProxyPair.md#password)
-- [port](ProxyPair.md#port)
-- [primary](ProxyPair.md#primary)
-- [type](ProxyPair.md#type)
-- [username](ProxyPair.md#username)
-
-### Methods
-
-- [closeBrowserUrl](ProxyPair.md#closebrowserurl)
-- [createAgent](ProxyPair.md#createagent)
-- [createHttpAgent](ProxyPair.md#createhttpagent)
-- [createSocksAgent](ProxyPair.md#createsocksagent)
-- [createSocksSocket](ProxyPair.md#createsockssocket)
-- [getAgent](ProxyPair.md#getagent)
-- [getBrowserUrl](ProxyPair.md#getbrowserurl)
-- [getHttpAgent](ProxyPair.md#gethttpagent)
-- [getSocksAgent](ProxyPair.md#getsocksagent)
+- [`ProxyInfo`](../type-aliases/ProxyInfo.md)
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new ProxyPair**(`http`, `socks`, `primaryType?`): [`ProxyPair`](ProxyPair.md)
+> **new ProxyPair**(`http`, `socks`, `primaryType`): `ProxyPair`
+
+Defined in: [pair.ts:27](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L27)
 
 Creates an instance of ProxyPair.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `http` | [`HttpLikeProxy`](../modules.md#httplikeproxy) |
-| `socks` | [`SocksProxy`](../modules.md#socksproxy) |
-| `primaryType?` | ``"http"`` \| ``"socks"`` |
+##### http
+
+[`HttpLikeProxy`](../type-aliases/HttpLikeProxy.md)
+
+##### socks
+
+[`SocksProxy`](../type-aliases/SocksProxy.md)
+
+##### primaryType
+
+`"http"` | `"socks"`
 
 #### Returns
 
-[`ProxyPair`](ProxyPair.md)
+`ProxyPair`
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
-
-#### Defined in
-
-dist/pair.d.ts:22
 
 ## Properties
 
 ### \_browserProxy
 
-• `Private` **\_browserProxy**: `any`
+> `private` **\_browserProxy**: `undefined` \| [`HttpLikeProxy`](../type-aliases/HttpLikeProxy.md)
 
-#### Defined in
+Defined in: [pair.ts:96](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L96)
 
-dist/pair.d.ts:71
-
-___
+***
 
 ### \_browserUrl
 
-• `Private` **\_browserUrl**: `any`
+> `private` **\_browserUrl**: `undefined` \| `string`
 
-#### Defined in
+Defined in: [pair.ts:97](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L97)
 
-dist/pair.d.ts:72
-
-___
+***
 
 ### \_httpAgent
 
-• `Private` **\_httpAgent**: `any`
+> `private` **\_httpAgent**: `undefined` \| `Agent`
 
-#### Defined in
+Defined in: [pair.ts:100](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L100)
 
-dist/pair.d.ts:74
-
-___
+***
 
 ### \_socksAgent
 
-• `Private` **\_socksAgent**: `any`
+> `private` **\_socksAgent**: `undefined` \| `Agent`
 
-#### Defined in
+Defined in: [pair.ts:99](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L99)
 
-dist/pair.d.ts:73
-
-___
+***
 
 ### http
 
-• `Readonly` **http**: [`HttpLikeProxy`](../modules.md#httplikeproxy)
+> `readonly` **http**: [`HttpLikeProxy`](../type-aliases/HttpLikeProxy.md)
 
-#### Defined in
+Defined in: [pair.ts:28](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L28)
 
-dist/pair.d.ts:13
-
-___
+***
 
 ### primaryType
 
-• `Readonly` **primaryType**: ``"http"`` \| ``"socks"``
+> `readonly` **primaryType**: `"http"` \| `"socks"` = `"http"`
 
-#### Defined in
+Defined in: [pair.ts:30](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L30)
 
-dist/pair.d.ts:15
-
-___
+***
 
 ### socks
 
-• `Readonly` **socks**: [`SocksProxy`](../modules.md#socksproxy)
+> `readonly` **socks**: [`SocksProxy`](../type-aliases/SocksProxy.md)
 
-#### Defined in
-
-dist/pair.d.ts:14
+Defined in: [pair.ts:29](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L29)
 
 ## Accessors
 
 ### \_primaryAgent
 
-• `get` **_primaryAgent**(): `any`
+#### Get Signature
 
-#### Returns
+> **get** `private` **\_primaryAgent**(): `undefined` \| `Agent`
 
-`any`
+Defined in: [pair.ts:109](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L109)
 
-**`Memberof`**
+##### Memberof
 
 ProxyPair
 
-#### Defined in
+##### Returns
 
-dist/pair.d.ts:82
+`undefined` \| `Agent`
 
-___
+***
 
 ### host
 
-• `get` **host**(): `string`
+#### Get Signature
 
-#### Returns
+> **get** **host**(): `string`
+
+Defined in: [pair.ts:50](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L50)
+
+##### Memberof
+
+ProxyPair
+
+##### Returns
 
 `string`
 
-**`Memberof`**
-
-ProxyPair
-
 #### Implementation of
 
-ProxyInfo.host
+`ProxyInfo.host`
 
-#### Defined in
-
-dist/pair.d.ts:38
-
-___
+***
 
 ### password
 
-• `get` **password**(): `undefined` \| `string`
+#### Get Signature
 
-#### Returns
+> **get** **password**(): `undefined` \| `string`
 
-`undefined` \| `string`
+Defined in: [pair.ts:81](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L81)
 
-**`Memberof`**
+##### Memberof
 
 ProxyPair
 
+##### Returns
+
+`undefined` \| `string`
+
 #### Implementation of
 
-ProxyInfo.password
+`ProxyInfo.password`
 
-#### Defined in
-
-dist/pair.d.ts:62
-
-___
+***
 
 ### port
 
-• `get` **port**(): `number`
+#### Get Signature
 
-#### Returns
+> **get** **port**(): `number`
+
+Defined in: [pair.ts:60](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L60)
+
+##### Memberof
+
+ProxyPair
+
+##### Returns
 
 `number`
 
-**`Memberof`**
-
-ProxyPair
-
 #### Implementation of
 
-ProxyInfo.port
+`ProxyInfo.port`
 
-#### Defined in
-
-dist/pair.d.ts:46
-
-___
+***
 
 ### primary
 
-• `get` **primary**(): [`ProxyInfo`](../modules.md#proxyinfo)
+#### Get Signature
 
-#### Returns
+> **get** **primary**(): [`ProxyInfo`](../type-aliases/ProxyInfo.md)
 
-[`ProxyInfo`](../modules.md#proxyinfo)
+Defined in: [pair.ts:92](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L92)
 
-**`Memberof`**
+##### Memberof
 
 ProxyPair
 
-#### Defined in
+##### Returns
 
-dist/pair.d.ts:70
+[`ProxyInfo`](../type-aliases/ProxyInfo.md)
 
-___
+***
 
 ### type
 
-• `get` **type**(): [`ProxyType`](../modules.md#proxytype)
+#### Get Signature
 
-#### Returns
+> **get** **type**(): [`ProxyType`](../type-aliases/ProxyType.md)
 
-[`ProxyType`](../modules.md#proxytype)
+Defined in: [pair.ts:40](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L40)
 
-**`Memberof`**
+##### Memberof
 
 ProxyPair
 
+##### Returns
+
+[`ProxyType`](../type-aliases/ProxyType.md)
+
 #### Implementation of
 
-ProxyInfo.type
+[`AnyProxyInfo`](../type-aliases/AnyProxyInfo.md).[`type`](../type-aliases/AnyProxyInfo.md#type)
 
-#### Defined in
-
-dist/pair.d.ts:30
-
-___
+***
 
 ### username
 
-• `get` **username**(): `undefined` \| `string`
+#### Get Signature
 
-#### Returns
+> **get** **username**(): `undefined` \| `string`
 
-`undefined` \| `string`
+Defined in: [pair.ts:70](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L70)
 
-**`Memberof`**
+##### Memberof
 
 ProxyPair
 
+##### Returns
+
+`undefined` \| `string`
+
 #### Implementation of
 
-ProxyInfo.username
-
-#### Defined in
-
-dist/pair.d.ts:54
+`ProxyInfo.username`
 
 ## Methods
 
-### closeBrowserUrl
+### closeBrowserUrl()
 
-▸ **closeBrowserUrl**(): `Promise`\<`void`\>
+> **closeBrowserUrl**(): `Promise`\<`void`\>
+
+Defined in: [pair.ts:215](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L215)
 
 #### Returns
 
 `Promise`\<`void`\>
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
 
-#### Defined in
+***
 
-dist/pair.d.ts:146
+### createAgent()
 
-___
+> **createAgent**(): `Agent`
 
-### createAgent
-
-▸ **createAgent**(): `Agent`
+Defined in: [pair.ts:119](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L119)
 
 #### Returns
 
@@ -320,19 +280,17 @@ ___
 
 {Agent}
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
 
-#### Defined in
+***
 
-dist/pair.d.ts:89
+### createHttpAgent()
 
-___
+> **createHttpAgent**(): `Agent`
 
-### createHttpAgent
-
-▸ **createHttpAgent**(): `Agent`
+Defined in: [pair.ts:161](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L161)
 
 #### Returns
 
@@ -340,19 +298,17 @@ ___
 
 {Agent}
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
 
-#### Defined in
+***
 
-dist/pair.d.ts:117
+### createSocksAgent()
 
-___
+> **createSocksAgent**(): `Agent`
 
-### createSocksAgent
-
-▸ **createSocksAgent**(): `Agent`
+Defined in: [pair.ts:174](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L174)
 
 #### Returns
 
@@ -360,26 +316,27 @@ ___
 
 {Agent}
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
 
-#### Defined in
+***
 
-dist/pair.d.ts:124
+### createSocksSocket()
 
-___
+> **createSocksSocket**(`host`, `port`): `Promise`\<`Socket`\>
 
-### createSocksSocket
-
-▸ **createSocksSocket**(`host`, `port`): `Promise`\<`Socket`\>
+Defined in: [pair.ts:189](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L189)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `host` | `string` |
-| `port` | `number` |
+##### host
+
+`string`
+
+##### port
+
+`number`
 
 #### Returns
 
@@ -387,19 +344,17 @@ ___
 
 {Promise<Socket>}
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
 
-#### Defined in
+***
 
-dist/pair.d.ts:133
+### getAgent()
 
-___
+> **getAgent**(): `Agent`
 
-### getAgent
-
-▸ **getAgent**(): `Agent`
+Defined in: [pair.ts:131](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L131)
 
 #### Returns
 
@@ -407,37 +362,33 @@ ___
 
 {Agent}
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
 
-#### Defined in
+***
 
-dist/pair.d.ts:96
+### getBrowserUrl()
 
-___
+> **getBrowserUrl**(): `Promise`\<`string`\>
 
-### getBrowserUrl
-
-▸ **getBrowserUrl**(): `Promise`\<`string`\>
+Defined in: [pair.ts:199](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L199)
 
 #### Returns
 
 `Promise`\<`string`\>
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
 
-#### Defined in
+***
 
-dist/pair.d.ts:140
+### getHttpAgent()
 
-___
+> **getHttpAgent**(): `Agent`
 
-### getHttpAgent
-
-▸ **getHttpAgent**(): `Agent`
+Defined in: [pair.ts:141](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L141)
 
 #### Returns
 
@@ -445,19 +396,17 @@ ___
 
 {Agent}
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
 
-#### Defined in
+***
 
-dist/pair.d.ts:103
+### getSocksAgent()
 
-___
+> **getSocksAgent**(): `Agent`
 
-### getSocksAgent
-
-▸ **getSocksAgent**(): `Agent`
+Defined in: [pair.ts:151](https://github.com/AlexXanderGrib/proxy-master/blob/ca5aa337e3a3c6ac87453a9ce0f2477b801f4bc9/src/pair.ts#L151)
 
 #### Returns
 
@@ -465,10 +414,6 @@ ___
 
 {Agent}
 
-**`Memberof`**
+#### Memberof
 
 ProxyPair
-
-#### Defined in
-
-dist/pair.d.ts:110

@@ -1,8 +1,8 @@
-import { Mutable, AnyProxyInfo, ProxyInfo, ProxyType, isTyped } from "./parser";
+import { type Mutable, type AnyProxyInfo, type ProxyInfo, type ProxyType, isTyped } from "./parser";
 import { getAgents } from "./agent";
 
 import axios from "axios";
-import { ParallelMapOptions, getMultiTryResult, parallelMap } from "./parallel";
+import { type ParallelMapOptions, getMultiTryResult, parallelMap } from "./parallel";
 
 export type CheckedProxy = Mutable<ProxyInfo> & {
   timeout: number;

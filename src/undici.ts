@@ -1,6 +1,6 @@
 /* eslint-disable unicorn/no-null */
-import { Agent, Dispatcher, ProxyAgent, buildConnector } from "undici";
-import { isHttpLike, isSocks, ProxyInfo } from "./parser";
+import { Agent, type Dispatcher, ProxyAgent, buildConnector } from "undici";
+import { isHttpLike, isSocks, type ProxyInfo } from "./parser";
 import { createSocksSocket } from "./socks";
 import { ProxyTypeRequiredError } from "./errors";
 
@@ -31,10 +31,11 @@ export function getDispatcher(
   if (isSocks(proxy)) {
     return new Agent({
       connect: async (options, callback) => {
-        let { httpSocket, hostname, port, protocol } = options;
+        const { httpSocket, hostname, port, protocol } = options;
+        let socket = httpSocket;
 
         try {
-          httpSocket = await createSocksSocket(
+          socket = await createSocksSocket(
             proxy,
             hostname,
             Number.parseInt(port) || (protocol === "https:" ? 443 : 80),
@@ -44,12 +45,12 @@ export function getDispatcher(
           callback(error as Error, null);
         }
 
-        if (httpSocket && protocol !== "https:") {
-          return callback(null, httpSocket.setNoDelay());
+        if (socket && protocol !== "https:") {
+          return callback(null, socket.setNoDelay());
         }
 
         const connect = buildConnector(connectorOptions);
-        return connect({ ...options, httpSocket }, callback);
+        return connect({ ...options, httpSocket: socket }, callback);
       }
     });
   }

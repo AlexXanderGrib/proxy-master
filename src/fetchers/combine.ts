@@ -1,6 +1,6 @@
 import { ProxyFetcher } from "../fetcher";
-import { ParallelMapOptions, parallelMap } from "../parallel";
-import { Mutable, ProxyInfo, stringifyToUrl } from "../parser";
+import { type ParallelMapOptions, parallelMap } from "../parallel";
+import { type Mutable, type ProxyInfo, stringifyToUrl } from "../parser";
 
 export type CombinedFetcherOptions = {
   readonly fetchers?: ProxyFetcher<unknown>[];

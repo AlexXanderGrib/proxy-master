@@ -1,17 +1,17 @@
 import { EventEmitter } from "eventemitter3";
-import { CheckedProxy, check } from "../checker";
+import { type CheckedProxy, check } from "../checker";
 import { ProxyFetcher } from "../fetcher";
-import { PARALLEL_COUNT, ParallelMapOptions, threadedMap } from "../parallel";
+import { PARALLEL_COUNT, type ParallelMapOptions, threadedMap } from "../parallel";
 import {
-  AnyProxyInfo,
-  Mutable,
-  ProxyInfo,
-  ProxyType,
+  type AnyProxyInfo,
+  type Mutable,
+  type ProxyInfo,
+  type ProxyType,
   parse,
   parseRequireType,
   stringifyToUrl
 } from "../parser";
-import { MaybeAsyncIterable, MaybePromiseLike } from "../types";
+import { type MaybeAsyncIterable, type MaybePromiseLike } from "../types";
 
 type AnyProxy = string | URL | AnyProxyInfo;
 type ProxyWithMeta<T> =
@@ -27,8 +27,10 @@ export type CustomFetcherOptions = {
 } & ParallelMapOptions;
 
 export type CustomFetcherEvents = {
-  "checked:valid": (proxy: CheckedProxy) => void;
+  "checked:valid": (proxy: CheckedProxy, line: string) => void;
+  "checked:valid:dedupe": (proxy: CheckedProxy, line: string) => void;
   "checked:failed": (line: string, error: unknown) => void;
+  "checked:failed:dedupe": (line: string, error: unknown) => void;
   "fetch:failed": (error: unknown) => void;
 };
 
@@ -73,6 +75,8 @@ function anyProxyToString<T>(proxy: AnyProxy | ProxyWithMeta<T>): [string, T?] {
  */
 export class CustomFetcher<T = never> extends ProxyFetcher<T> {
   private readonly _customFetch: CustomFetcherFetch<T>;
+  private readonly _valid = new Set<string>();
+  private readonly _invalid = new Set<string>();
   public readonly events = new EventEmitter<CustomFetcherEvents>();
 
   /**
@@ -148,7 +152,14 @@ export class CustomFetcher<T = never> extends ProxyFetcher<T> {
             timeout: this.options.checkTimeout
           });
 
-          this.events.emit("checked:valid", checked);
+          const string = stringifyToUrl(checked);
+
+          this.events.emit("checked:valid", checked, proxy);
+
+          if (!this._valid.has(string)) {
+            this._valid.add(string);
+            this.events.emit("checked:valid:dedupe", checked, proxy);
+          }
 
           return [checked, info];
         } else {
@@ -161,8 +172,14 @@ export class CustomFetcher<T = never> extends ProxyFetcher<T> {
       },
       {
         key: ([proxy]) => proxy,
-        onError: (error, [line]) =>
-          this.events.emit("checked:failed", line, error),
+        onError: (error, [line]) => {
+          this.events.emit("checked:failed", line, error);
+
+          if (!this._invalid.has(line)) {
+            this._invalid.add(line);
+            this.events.emit("checked:failed:dedupe", line, error);
+          }
+        },
 
         parallel: PARALLEL_COUNT * 10
       }

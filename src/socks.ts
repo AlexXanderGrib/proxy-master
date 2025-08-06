@@ -1,6 +1,6 @@
-import { SocksClient, SocksClientOptions } from "socks";
-import { SocksProxy } from "./parser";
-import { Socket } from "net";
+import { SocksClient, type SocksClientOptions } from "socks";
+import { type SocksProxy } from "./parser";
+import { type Socket } from "net";
 
 /**
  *

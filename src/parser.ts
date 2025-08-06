@@ -37,6 +37,8 @@ const protocolToType: Record<string, ProxyType> = {
   "socks:": "socks5",
   "socks4:": "socks4",
   "socks5:": "socks5",
+  "socks5h:": "socks5",
+  "socks4a:": "socks4",
   "http:": "http",
   "https:": "https"
 };

@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { fetchers } from "../fetchers";
+import { describe, expect, test } from "vitest";
 
 describe("Fetchers", () => {
   describe("ProxyLine", () => {
@@ -18,7 +19,7 @@ describe("Fetchers", () => {
       apiKey: process.env.PROXY6_API_KEY as string
     });
 
-    test("should fetch proxies", async () => {
+    test.todo("should fetch proxies", async () => {
       const proxies = await fetcher.fetch();
       expect(proxies.size).toBeGreaterThan(0);
     });

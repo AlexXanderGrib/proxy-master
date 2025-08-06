@@ -1,4 +1,6 @@
-Package / [Exports](modules.md)
+**Package**
+
+***
 
 # Proxy Master
 
