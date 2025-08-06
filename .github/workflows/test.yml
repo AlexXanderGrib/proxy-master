@@ -13,21 +13,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run jest
+      - name: Test
         run: npm test -- --coverage
-
-      - name: Upload coverage to Codecov
-        run: npx codecov
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
-      # Only if needed
-      # - name: Upload coverage to Codacy
-      #   run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
-      #   env:
-      #     CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
